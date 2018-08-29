@@ -1,0 +1,9 @@
+{
+    "name": "database_server",
+    "version": "0.2.0",
+    "description": "A sample Node.js app using Express 4",
+    "dependencies": {
+        "express": "^4.13.3",
+        "mysql": "^2.16.0"
+    }
+}

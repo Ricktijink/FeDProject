@@ -37,7 +37,7 @@
     }
     ```
 - `npm install`
-- `node server.js`
+- `node server.js` of `nodemon server.js`
 - Open in browser `localhost:3000`
 
 - Make everythng that is in the map public accessible
