@@ -15,6 +15,7 @@
     values (1, 'luisa', 'geheim');
     ```
 - `select * from users;`
+---
 
 
 ## 2. Webserver 
