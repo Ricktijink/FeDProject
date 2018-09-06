@@ -1,0 +1,20 @@
+<h2>
+  Database-overview
+</h2>
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Published</th>
+        <th>Text</th>
+    </tr>
+    <tr *ngFor="let articles of articlesDT">
+        <td>{{articles.subject}}</td>
+        <td>{{articles.title}}</td>
+        <td>{{articles.description}}</td>
+        <td>{{articles.published | date:'dd-MMM-yy (EEE)'}}</td>
+        <td>{{articles.text | slice:0:98}} ...</td>
+        </tr>
+</table>
+
