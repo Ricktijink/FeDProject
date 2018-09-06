@@ -28,4 +28,9 @@ export class ArticlesService {
   // console.log(JSON.stringify(this.model))
   // this.userService.sendUsers(this.model).subscribe()
   // }
+
+  deleteArticle(id) {
+    return this.http.delete('http://localhost:3000/' + id );
+
+  }
 }

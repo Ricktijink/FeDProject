@@ -1,28 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<p>Hallo</p>
+<h1>My articles</h1>
+<app-memocard-list></app-memocard-list>
+<app-database-overview></app-database-overview>
 
-<table>
-    <tr>
-        <th>Subject</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Published</th>
-        <th>Text</th>
-    </tr>
-    <tr *ngFor="let articles of articlesDT">
-        <td>{{articles.subject}}</td>
-        <td>{{articles.title}}</td>
-        <td>{{articles.description}}</td>
-        <td>{{articles.published}}</td>
-        <td>{{articles.text}}</td>
-        </tr>
-</table>
-<ul >
-    <li *ngFor="let articles of articlesDT">
-        {{articles.subject}} /  {{articles.title}}
-    </li>
-</ul>
-
-{{articlesDT | json}}
 
 <router-outlet></router-outlet>

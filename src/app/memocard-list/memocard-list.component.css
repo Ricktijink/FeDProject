@@ -1,0 +1,13 @@
+.card 
+{
+    max-width: 370px;
+}
+.card-header {
+    background-color: #ffffff;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-link {
+    margin-top: -30px;
+}
