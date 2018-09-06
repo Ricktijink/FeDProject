@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}
+
+body {
+    background: #F2F2F2;
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+  }
+  
+  #container {
+    height: 100%;
+  }
+
+ .memocard-list{
+    margin-left: 200px;
+    color:#FFFFFF;
+    width: 400px;
+    height: 100vh;
+    background-color: #212943;
+    padding: 20px 30px;
+    float: left;
+}
+
+.memocard-details{
+    margin-left: 600px;
+    color: #474747;
+    padding: 50px 80px;
+    width: auto;
+    min-height: 900px;
+    background-color: #FFFFFF;
+}

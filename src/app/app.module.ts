@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubjectOverviewComponent } from './subject-overview/subject-overview.component';
 import { MemocardListComponent } from './memocard-list/memocard-list.component';
+import { AboutComponent } from './about/about.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubjectOverviewComponent,
-    MemocardListComponent
+    MemocardListComponent,
+    AboutComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,

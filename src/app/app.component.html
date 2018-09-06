@@ -1,28 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<p>Hallo</p>
+<div id="container">
+    <app-subject-overview></app-subject-overview>
+    <div class="memocard-list">
+        Memorycard List
+        <!-- Column 1: Subjects bar -->
+    </div>    
+    <div class="memocard-details">
+        <h1>This is a detailview</h1>
+        <!-- Column 2: Memocards list + detailview? -->
+        <!-- <app-memocard-list></app-memocard-list> -->
+        <router-outlet></router-outlet>
+    </div>
+</div>
 
-<table>
-    <tr>
-        <th>Subject</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Published</th>
-        <th>Text</th>
-    </tr>
-    <tr *ngFor="let articles of articlesDT">
-        <td>{{articles.subject}}</td>
-        <td>{{articles.title}}</td>
-        <td>{{articles.description}}</td>
-        <td>{{articles.published}}</td>
-        <td>{{articles.text}}</td>
-        </tr>
-</table>
-<ul >
-    <li *ngFor="let articles of articlesDT">
-        {{articles.subject}} /  {{articles.title}}
-    </li>
-</ul>
 
-{{articlesDT | json}}
-
-<router-outlet></router-outlet>
