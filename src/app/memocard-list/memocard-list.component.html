@@ -11,6 +11,11 @@
   <div class="card-body">
 
       <p class="card-text">{{articles.description}}</p>
+      <button  type="submit" (click)="details(articles.id)">Details</button>
   </div>
-  
+  <div [hidden]="!showDetails">
+    <p>
+        {{articles.text}}
+    </p>
+  </div>
 </div>

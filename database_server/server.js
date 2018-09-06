@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     connection.connect()
 
     connection.query('select * from articles', function (err, rows, fields) {
-        console.log(err)
+        console.log('Reload get ' + err)
         // console.log(JSON.stringify(rows))
         res.send(JSON.stringify(rows))
     })
@@ -57,10 +57,26 @@ app.delete('/:id', (req, res) => {
 
     connection.connect()
     connection.query('delete from articles where id = ?', req.params.id , function (err, rows, fields) {
+        console.log('Delete query ' + err)
+        res.status(200).end()
+    })
+    connection.end()
+})
+
+app.get('/:id', (req, res) => {
+
+    console.log("in get one " + req.params.id)
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('select * from articles where id = ?', req.params.id , function (err, rows, fields) {
         console.log(err)
+        console.log(JSON.stringify(rows))
+        res.send(JSON.stringify(rows))
     })
     connection.end()
 
-    res.status(200).end()
+
 })
 app.listen(3000, () => console.log('Example app listening on port 3000!'))

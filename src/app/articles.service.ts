@@ -30,7 +30,13 @@ export class ArticlesService {
   // }
 
   deleteArticle(id) {
-    return this.http.delete('http://localhost:3000/' + id );
+    return this.http.delete('http://localhost:3000/' + id )
+    .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
+    );
 
+  }
+
+  detailsUser(id) {
+    return this.http.get('http://localhost:3000/' + id );
   }
 }
