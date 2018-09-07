@@ -37,6 +37,12 @@
         </a>
       </li>
     </ul>
+    <!-- Create article button -->
+    <div class="createButton">
+      <a routerLink="creatememo" [class.activated]="currentUrl == '/creatememo'">
+        <i class="fas fa-plus"></i> Add Memo
+      </a>
+    </div>
     <!-- Footer menu -->
     <ul class="footermenu">
       <li>
@@ -46,7 +52,7 @@
       </li>
       <li>
         <a routerLink="about" [class.activated]="currentUrl == '/about'">
-          <i class="fas fa-users-cog fa-lg"></i> About
+          <i class="fas fa-users-cog"></i> About
         </a>
       </li>
     </ul>  

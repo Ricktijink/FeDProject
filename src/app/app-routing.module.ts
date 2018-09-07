@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 // Import generated components
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { AboutComponent } from './about/about.component';
+
+import { CreateMemoFormComponent } from './create-memo-form/create-memo-form.component';
 import { MemocardListComponent } from './memocard-list/memocard-list.component';
 import { HomeComponent } from './home/home.component';
 
@@ -22,6 +24,9 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
+    path: 'creatememo',
+    component: CreateMemoFormComponent
+  },
     path: 'all',
     component: MemocardListComponent
   },

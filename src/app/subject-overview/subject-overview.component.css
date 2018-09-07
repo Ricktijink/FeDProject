@@ -1,24 +1,32 @@
 
+/* Fixed sidebar with nagivation */
+
 .subject-sidebar{
     background: #1C2237;
     height: 100%;
     width: 200px;
 }
 
+/* Logo */
+
 .logo{
     color: #FFFFFF;
     width: 100%;
     height: auto;
-    background-color: #535FFC;
+    background-color: #2e344c;
     margin-bottom: 50px;
     padding: 20px 0px 20px 40px;
 }
+
+/* Footer menu in sidebar */
 
 .footermenu{
     position: absolute;
     bottom: 0;
     left: 0;
 }
+
+/* Navigation styling */
 
 nav {
     width: 100%;
@@ -43,6 +51,20 @@ nav {
       color: #FFFFFF;
   }
 
+    nav li a i{
+        vertical-align: middle !important;
+        margin-right: 16px;
+        height: 20px;
+        width: 20px;
+        line-height: 16px;
+    }
+
+/* Active menu item */
+
+.active{
+    color: #FFFFFF!important;
+}
+
 nav li a i{
     vertical-align: middle !important;
     margin-right: 16px;
@@ -50,6 +72,8 @@ nav li a i{
     width: 20px;
     line-height: 16px;
 }
+
+/* Colors for subject icons */
 
 .yellow {
     color: #F7C62F;
@@ -69,6 +93,35 @@ nav li a i{
 
 .green {
     color: #02e775;
+}
+
+
+/* Create memo button */
+
+.createButton {
+    background-color: #4c56af;
+    border: none;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0px auto;
+    border-radius: 4px;
+    width: 80%;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+.createButton:hover{
+    background-color: #6770c4;
+}
+
+.createButton a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.createButton i{
+    margin-right: 4px;
 }
 .activated {
     color: #ffffff!important;
