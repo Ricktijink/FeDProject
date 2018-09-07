@@ -1,0 +1,14 @@
+ delete(id) {
+    console.log("delete " + id)
+    this.articlesService.deleteArticle(id)
+    .pipe(
+    mergeMap(e =>
+      this.articlesService.getArticles()
+    )
+    ).subscribe(articles => this.articlesDT = articles)
+  }
+
+//
+   (newList)=>{  
+        this.articlesDT.splice(this.articlesDT.indexOf(this.articlesDT), 1);  
+        }

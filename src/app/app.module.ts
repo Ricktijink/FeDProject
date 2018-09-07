@@ -8,6 +8,7 @@ import { SubjectOverviewComponent } from './subject-overview/subject-overview.co
 import { MemocardListComponent } from './memocard-list/memocard-list.component';
 import { AboutComponent } from './about/about.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
+import { DatabaseOverviewComponent } from './database-overview/database-overview.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TutorialComponent } from './tutorial/tutorial.component';
     SubjectOverviewComponent,
     MemocardListComponent,
     AboutComponent,
-    TutorialComponent
+    TutorialComponent,
+    DatabaseOverviewComponent
   ],
   imports: [
     BrowserModule,

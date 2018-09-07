@@ -1,16 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="container">
+    <!-- Column 1: Subjects bar -->
     <app-subject-overview></app-subject-overview>
     <div class="memocard-list">
-        Memorycard List
-        <!-- Column 1: Subjects bar -->
+        <app-memocard-list></app-memocard-list>
     </div>    
     <div class="memocard-details">
-        <h1>This is a detailview</h1>
         <!-- Column 2: Memocards list + detailview? -->
-        <!-- <app-memocard-list></app-memocard-list> -->
+        <h1>This is a detailview</h1>
         <router-outlet></router-outlet>
     </div>
 </div>
-
-
