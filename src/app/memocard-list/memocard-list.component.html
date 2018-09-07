@@ -1,19 +1,21 @@
-<div *ngFor="let articles of articlesDT" class="card">
-  <div class="card-header">
-      <div>
-          <h5 class="card-title">{{articles.title}}</h5>
-          <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
-      </div>
-      <button class="btn delete" (click)="delete(articles.id)"><i class="far fa-trash-alt"></i></button>
-  </div>
-  <div class="card-body">
-
-      <p class="card-text">{{articles.description}}</p>
-      <button class="btn details" type="submit" (click)="details(articles.id)"><i class="fas fa-align-left"></i></button>
-  </div>
-  <div [hidden]="!showDetails">
-    <p>
-        {{articles.text}}
-    </p>
-  </div>
+<div class="memocard-list">
+    <div *ngFor="let articles of articlesDT" class="card">
+        <div class="card-header">
+            <div>
+                <h5 class="card-title">{{articles.title}}</h5>
+                <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
+            </div>
+            <button class="btn delete" (click)="delete(articles.id)"><i class="far fa-trash-alt"></i></button>
+        </div>
+        <div class="card-body">
+        
+            <p class="card-text">{{articles.description}}</p>
+            <button class="btn details" type="submit" (click)="details(articles.id)"><i class="fas fa-align-left"></i></button>
+        </div>
+        <div [hidden]="!showDetails">
+            <p>
+                {{articles.text}}
+            </p>
+        </div>
+    </div>
 </div>

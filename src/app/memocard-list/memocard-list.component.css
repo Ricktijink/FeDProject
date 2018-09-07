@@ -41,6 +41,9 @@
     border-left: 6px solid #7f8390;
     cursor: pointer;
 }
+p.card-text {
+    max-width: 290px;
+}
 
 /* Memocard button styling */
 

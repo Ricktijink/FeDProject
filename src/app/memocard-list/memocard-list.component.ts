@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../articles.service';
 import { Articles } from '../articles';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-memocard-list',
@@ -8,6 +9,8 @@ import { Articles } from '../articles';
   styleUrls: ['./memocard-list.component.css']
 })
 export class MemocardListComponent implements OnInit {
+  
+  
 
   articlesDT
   articleDetails: Articles
@@ -19,12 +22,18 @@ export class MemocardListComponent implements OnInit {
     this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error))
   }
 
+  getSubject(subject) {
+    console.log("Subject: " + subject)
+    this.articlesService.getSubject(subject).subscribe(
+      articles => this.articlesDT = articles, error => console.log(error)
+    );
+  }
+
   delete(id) {
     console.log("delete " + id)
     this.articlesService.deleteArticle(id)
     .subscribe(() => {
-      console.log('subscribe')
-      this.getArticles() },
+      this.ngOnInit() },
       error => console.log(error)
     );   
   }
@@ -32,14 +41,23 @@ export class MemocardListComponent implements OnInit {
   details(id) {
     console.log("details " + id)
     this.showDetails= !this.showDetails;
-    this.articlesService.detailsUser(id).subscribe(
+    this.articlesService.articleDetails(id).subscribe(
       articlesDT => this.articleDetails = articlesDT[0]
     );
   }
 
 
   ngOnInit() {
-    this.getArticles();
+    let pathname = window.location.pathname
+    let appId = pathname.split('/')[1]
+
+    if (appId == 'all') {
+      this.getArticles()
+    }
+    else {
+      this.getSubject( appId.toString());
+    }
+    
   }
 
 }

@@ -24,23 +24,43 @@ function createMyConnection() {
     return connection;
 }
 
+// Get items from database
 app.get('/', (req, res) => {
     var connection = createMyConnection();
     connection.connect()
 
     connection.query('select * from articles', function (err, rows, fields) {
+        if(err)
         console.log('Reload get ' + err)
-        // console.log(JSON.stringify(rows))
+
         res.send(JSON.stringify(rows))
     })
     connection.end()
 })
 
+// Get items of a specified subject from database
+app.get('/:subject', (req, res) => {
+    var connection = createMyConnection();
+    connection.connect()
+
+    console.log("in get one " + req.params.subject)
+
+    connection.query(`select * from articles where subject = ?`, req.params.subject , function (err, rows, fields) {
+        if(err)
+        console.log('Reload get ' + err)
+
+        res.send(JSON.stringify(rows))
+    })
+    connection.end()
+})
+
+// Send items to database
 app.post('/', (req, res) => {
     var connection = createMyConnection();
 
     connection.connect()
      connection.query('insert into articles set ?', req.body , function (err, rows, fields) {
+        if(err)
         console.log(err)
     })
     connection.end()
@@ -48,21 +68,22 @@ app.post('/', (req, res) => {
     res.status(200).end()
 })
 
+// Delete items from database
 app.delete('/:id', (req, res) => {
-
-    console.log("in delete " + req.params.id)
-
 
     var connection = createMyConnection();
 
     connection.connect()
     connection.query('delete from articles where id = ?', req.params.id , function (err, rows, fields) {
-        console.log('Delete query ' + err)
+        if(err)
+        console.log('Delete query error: ' + err)
+
         res.status(200).end()
     })
     connection.end()
 })
 
+// Get information of one item from database
 app.get('/:id', (req, res) => {
 
     console.log("in get one " + req.params.id)
@@ -71,12 +92,12 @@ app.get('/:id', (req, res) => {
 
     connection.connect()
     connection.query('select * from articles where id = ?', req.params.id , function (err, rows, fields) {
+        if(err)
         console.log(err)
-        console.log(JSON.stringify(rows))
+
         res.send(JSON.stringify(rows))
     })
     connection.end()
-
-
 })
+
 app.listen(3000, () => console.log('Example app listening on port 3000!'))

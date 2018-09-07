@@ -44,16 +44,12 @@ nav {
       color: #FFFFFF;
   }
 
-    nav li a i{
-        vertical-align: middle !important;
-        margin-right: 16px;
-        height: 20px;
-        width: 20px;
-        line-height: 16px;
-    }
-
-.active{
-    color: #FFFFFF!important;
+nav li a i{
+    vertical-align: middle !important;
+    margin-right: 16px;
+    height: 20px;
+    width: 20px;
+    line-height: 16px;
 }
 
 .yellow {
@@ -74,4 +70,7 @@ nav {
 
 .green {
     color: #02e775;
+}
+.activated {
+    color: #ffffff!important;
 }
