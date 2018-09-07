@@ -9,6 +9,7 @@ import { MemocardListComponent } from './memocard-list/memocard-list.component';
 import { AboutComponent } from './about/about.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { DatabaseOverviewComponent } from './database-overview/database-overview.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DatabaseOverviewComponent } from './database-overview/database-overview
     MemocardListComponent,
     AboutComponent,
     TutorialComponent,
-    DatabaseOverviewComponent
+    DatabaseOverviewComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
