@@ -10,6 +10,7 @@ import { MemocardListComponent } from './memocard-list/memocard-list.component';
 import { HomeComponent } from './home/home.component';
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +28,7 @@ const routes: Routes = [
     path: 'creatememo',
     component: CreateMemoFormComponent
   },
+  {
     path: 'all',
     component: MemocardListComponent
   },
