@@ -12,10 +12,11 @@
             <p class="card-text">{{articles.description}}</p>
             <button class="btn details" type="submit" (click)="details(articles.id)"><i class="fas fa-align-left"></i></button>
         </div>
-        <div [hidden]="!showDetails">
-            <p>
-                {{articles.text}}
-            </p>
-        </div>
     </div>
+</div>
+
+<div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
+    <p>
+        {{articles.text}}
+    </p>
 </div>

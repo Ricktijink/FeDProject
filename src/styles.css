@@ -21,25 +21,23 @@ body {
     height: 100%;
 }
 
+.content {
+    overflow-y: scroll;
+}
   /* Memocard List styling */
 
 .memocard-list{
-    margin-left: 200px;
     width: 400px;
     height: 100vh;
     overflow-y: scroll;
     background-color: #212943;
     float: left;
 }
-/* Content view styling*/
-.content{
-
-}
 
 /* Memocard Details styling */
 
 .memocard-details{
-    margin-left: 600px;
+    /* margin-left: 600px; */
     color: #474747;
     padding: 50px 80px;
     width: auto;
