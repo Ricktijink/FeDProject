@@ -9,6 +9,9 @@ import { MemocardListComponent } from './memocard-list/memocard-list.component';
 import { AboutComponent } from './about/about.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { DatabaseOverviewComponent } from './database-overview/database-overview.component';
+import { CreateMemoFormComponent } from './create-memo-form/create-memo-form.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,14 @@ import { DatabaseOverviewComponent } from './database-overview/database-overview
     MemocardListComponent,
     AboutComponent,
     TutorialComponent,
-    DatabaseOverviewComponent
+    DatabaseOverviewComponent,
+    CreateMemoFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
