@@ -19,7 +19,8 @@ export class ArticlesService {
   }
 
   sendArticles (articles: Articles) {
-    return this.http.post('http://localhost:3000/', articles).pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
+    return this.http.post('http://localhost:3000/', articles)
+    .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
     );
   }
 
@@ -33,10 +34,11 @@ export class ArticlesService {
     return this.http.delete('http://localhost:3000/' + id )
     .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
     );
-
   }
 
-  detailsUser(id) {
-    return this.http.get('http://localhost:3000/' + id );
+  articleDetails(id) {
+    return this.http.get('http://localhost:3000/' + id )
+    .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
+    );
   }
 }

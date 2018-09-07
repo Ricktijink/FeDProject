@@ -10,7 +10,14 @@ import { Articles } from '../articles';
 export class MemocardListComponent implements OnInit {
 
   articlesDT
-  articleDetails: Articles
+  articleDetails: Articles = {
+    id: 0,
+    subject: '',
+    title:'',
+    description: '',
+    published: '',
+    text: ''
+}
   showDetails = false;
 
   constructor(private articlesService: ArticlesService) { }
@@ -32,7 +39,7 @@ export class MemocardListComponent implements OnInit {
   details(id) {
     console.log("details " + id)
     this.showDetails= !this.showDetails;
-    this.articlesService.detailsUser(id).subscribe(
+    this.articlesService.articleDetails(id).subscribe(
       articlesDT => this.articleDetails = articlesDT[0]
     );
   }
