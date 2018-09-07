@@ -4,7 +4,7 @@
     <!-- Submenu 1 -->
     <ul>
       <li>
-        <a routerLink="" [class.activated]="currentUrl == '/'">
+        <a routerLink="" class="" [class.activated]="currentUrl == '/'">
           <i class="fas fa-home fa-lg"></i> Home
         </a>
       </li> 
@@ -12,7 +12,12 @@
     <!-- Submenu 2 -->
     <ul>
       <li>
-        <a routerLink="mysql" class="active" [class.activated]="currentUrl == '/mysql'">
+        <a routerLink="all" [class.activated]="currentUrl == '/all'">
+          <i class="fas fa-laptop-code fa-lg green"></i> All
+        </a>
+      </li>
+      <li>
+        <a routerLink="mysql" [class.activated]="currentUrl == '/mysql'">
           <i class="fas fa-database fa-lg yellow"></i> MySQL
         </a>
       </li>

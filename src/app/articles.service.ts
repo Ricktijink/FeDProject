@@ -10,33 +10,40 @@ import {catchError} from "rxjs/internal/operators";
 export class ArticlesService {
 
   constructor(private http: HttpClient) { 
-
   }
 
-  
+  // Get items from database
   getArticles() {
-    return  this.http.get('http://localhost:3000/');
-  }
-
-  sendArticles (articles: Articles) {
-    return this.http.post('http://localhost:3000/', articles).pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
+    return  this.http.get('http://localhost:3000/')
+    .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
     );
   }
 
-  // onSubmit() { 
-  // this.submitted = true; 
-  // console.log(JSON.stringify(this.model))
-  // this.userService.sendUsers(this.model).subscribe()
-  // }
+  // items of a specified subject from database
+  getSubject(subject) {
+    return this.http.get('http://localhost:3000/' + subject)
+    .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
+    );
+  }
 
+  // Send items to database
+  sendArticles (articles: Articles) {
+    return this.http.post('http://localhost:3000/', articles)
+    .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
+    );
+  }
+
+  // Delete items from database
   deleteArticle(id) {
     return this.http.delete('http://localhost:3000/' + id )
     .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
     );
-
   }
 
-  detailsUser(id) {
-    return this.http.get('http://localhost:3000/' + id );
+  // Get information of one item from database
+  articleDetails(id) {
+    return this.http.get('http://localhost:3000/' + id )
+    .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
+    );
   }
 }

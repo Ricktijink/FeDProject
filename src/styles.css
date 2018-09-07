@@ -21,10 +21,11 @@ body {
     height: 100%;
 }
 
+.content {
+}
   /* Memocard List styling */
 
 .memocard-list{
-    margin-left: 200px;
     width: 400px;
     height: 100vh;
     overflow-y: scroll;
@@ -35,7 +36,7 @@ body {
 /* Memocard Details styling */
 
 .memocard-details{
-    margin-left: 600px;
+    /* margin-left: 600px; */
     color: #474747;
     padding: 50px 80px;
     width: auto;

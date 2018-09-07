@@ -1,13 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="container">
     <!-- Column 1: Subjects bar -->
-    <app-subject-overview></app-subject-overview>
-    <div class="memocard-list">
-        <app-memocard-list></app-memocard-list>
-    </div>    
-    <div class="memocard-details">
-        <!-- Column 2: Memocards list + detailview? -->
-        <h1>This is a detailview</h1>
+    <div class="menu">
+        <app-subject-overview></app-subject-overview>
+    </div>
+    <div class="content">
         <router-outlet></router-outlet>
     </div>
+    
 </div>

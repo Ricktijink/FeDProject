@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-subject-overview',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectOverviewComponent implements OnInit {
 
-  constructor() { }
+  currentUrl: string;
 
-  ngOnInit() {
+  constructor(private router: Router) {
+    this.router.events.subscribe((path: NavigationEnd) => {
+      if(path.url){
+      this.currentUrl = path.url;
+      }
+      });
   }
 
+  ngOnInit() {}
 }

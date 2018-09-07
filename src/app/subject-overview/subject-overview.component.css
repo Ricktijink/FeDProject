@@ -4,7 +4,6 @@
 .subject-sidebar{
     background: #1C2237;
     height: 100%;
-    position: fixed;
     width: 200px;
 }
 
@@ -66,6 +65,14 @@ nav {
     color: #FFFFFF!important;
 }
 
+nav li a i{
+    vertical-align: middle !important;
+    margin-right: 16px;
+    height: 20px;
+    width: 20px;
+    line-height: 16px;
+}
+
 /* Colors for subject icons */
 
 .yellow {
@@ -87,6 +94,7 @@ nav {
 .green {
     color: #02e775;
 }
+
 
 /* Create memo button */
 
@@ -110,9 +118,11 @@ nav {
 .createButton a{
     color: #FFFFFF;
     text-decoration: none;
-    
 }
 
 .createButton i{
     margin-right: 4px;
+}
+.activated {
+    color: #ffffff!important;
 }
