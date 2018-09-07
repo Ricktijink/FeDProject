@@ -1,3 +1,49 @@
-<p>
-  subject-overview works!
-</p>
+<div class="subject-sidebar">
+  <div class="logo">OurLogo</div>
+  <nav>
+    <!-- Submenu 1 -->
+    <ul>
+      <li>
+        <a routerLink="" [class.activated]="currentUrl == '/'">
+          <i class="fas fa-home fa-lg"></i> Home
+        </a>
+      </li> 
+    </ul>
+    <!-- Submenu 2 -->
+    <ul>
+      <li>
+        <a routerLink="mysql" class="active" [class.activated]="currentUrl == '/mysql'">
+          <i class="fas fa-database fa-lg yellow"></i> MySQL
+        </a>
+      </li>
+      <li>
+        <a routerLink="expressjs" [class.activated]="currentUrl == '/expressjs'">
+          <i class="fas fa-server fa-lg orange"></i> ExpressJS
+        </a>
+      </li>
+      <li>
+        <a routerLink="angular" [class.activated]="currentUrl == '/angular'">
+          <i class="fab fa-angular fa-lg pink"></i> Angular
+        </a>
+      </li>
+      <li>
+        <a routerLink="nodejs" [class.activated]="currentUrl == '/nodejs'">
+          <i class="fab fa-node-js fa-lg purple"></i> NodeJS
+        </a>
+      </li>
+    </ul>
+    <!-- Footer menu -->
+    <ul class="footermenu">
+      <li>
+        <a routerLink="tutorial" [class.activated]="currentUrl == '/tutorial'">
+          <i class="far fa-question-circle fa-lg"></i> Tutorial
+        </a>
+      </li>
+      <li>
+        <a routerLink="about" [class.activated]="currentUrl == '/about'">
+          <i class="fas fa-users-cog fa-lg"></i> About
+        </a>
+      </li>
+    </ul>  
+  </nav>
+</div>

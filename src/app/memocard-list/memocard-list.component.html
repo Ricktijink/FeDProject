@@ -1,17 +1,15 @@
-<h2>Memocard list</h2>
-
-<div *ngFor="let articles of articlesDT" class="card border-dark mb-3">
+<div *ngFor="let articles of articlesDT" class="card">
   <div class="card-header">
       <div>
           <h5 class="card-title">{{articles.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
+          <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
       </div>
-      <button class="btn btn-link" (click)="delete(articles.id)">X</button>
+      <button class="btn delete" (click)="delete(articles.id)"><i class="far fa-trash-alt"></i></button>
   </div>
   <div class="card-body">
 
       <p class="card-text">{{articles.description}}</p>
-      <button  type="submit" (click)="details(articles.id)">Details</button>
+      <button class="btn details" type="submit" (click)="details(articles.id)"><i class="fas fa-align-left"></i></button>
   </div>
   <div [hidden]="!showDetails">
     <p>

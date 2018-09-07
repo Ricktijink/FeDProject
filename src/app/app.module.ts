@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubjectOverviewComponent } from './subject-overview/subject-overview.component';
 import { MemocardListComponent } from './memocard-list/memocard-list.component';
+import { AboutComponent } from './about/about.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 import { DatabaseOverviewComponent } from './database-overview/database-overview.component';
 
 @NgModule({
@@ -13,6 +15,8 @@ import { DatabaseOverviewComponent } from './database-overview/database-overview
     AppComponent,
     SubjectOverviewComponent,
     MemocardListComponent,
+    AboutComponent,
+    TutorialComponent,
     DatabaseOverviewComponent
   ],
   imports: [
