@@ -1,6 +1,6 @@
 <div class="memocard-list">
     <div *ngFor="let articles of articlesDT" class="card">
-        <div class="card-header">
+        <div class="card-header" (click)="details(articles.id)">
             <div>
                 <h5 class="card-title">{{articles.title}}</h5>
                 <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
@@ -10,7 +10,7 @@
         <div class="card-body">
         
             <p class="card-text">{{articles.description}}</p>
-            <button class="btn details" type="submit" (click)="details(articles.id)"><i class="fas fa-align-left"></i></button>
+            <!-- <button class="btn details" type="submit" (click)="details(articles.id)"><i class="fas fa-align-left"></i></button> -->
         </div>
     </div>
 </div>

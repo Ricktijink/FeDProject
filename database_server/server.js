@@ -55,7 +55,8 @@ app.get('/:subject', (req, res) => {
 })
 
 // Send items to database
-app.post('/', (req, res) => {
+app.post('/creatememo', (req, res) => {
+    var articles = {id: 0, subject: req.body.subject, title: req.body.title, description: req.body.description, text: req.body.text};
     var connection = createMyConnection();
 
     connection.connect()
@@ -66,7 +67,7 @@ app.post('/', (req, res) => {
     connection.end()
 
     res.status(200).end()
-})
+});
 
 // Delete items from database
 app.delete('/:id', (req, res) => {

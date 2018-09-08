@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+// test
+import { Articles } from '../articles';
+import { ArticlesService } from '../articles.service';
+
 @Component({
   selector: 'app-create-memo-form',
   templateUrl: './create-memo-form.component.html',
@@ -7,7 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateMemoFormComponent implements OnInit {
 
-  constructor() { }
+  articles: Articles = { id: 0, subject: '', title: '', description: '', text: '' }
+  
+  submit() {
+    // Console log test the input
+    console.log(" submit the following " + this.articles.title);
+
+    this.articlesService.sendArticles(this.articles).subscribe()
+  }
+
+  constructor(private articlesService: ArticlesService) { }
 
   ngOnInit() {
   }

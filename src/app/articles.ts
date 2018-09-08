@@ -3,6 +3,5 @@ export class Articles {
     subject: string;
     title:string;
     description: string;
-    published: string;
     text: string;
 }

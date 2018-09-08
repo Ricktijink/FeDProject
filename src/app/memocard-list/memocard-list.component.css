@@ -41,9 +41,20 @@
     border-left: 6px solid #7f8390;
     cursor: pointer;
 }
-p.card-text {
-    max-width: 290px;
+
+.card:hover .delete{
+    display: block;
 }
+
+p.card-text {
+    max-width: 270px;
+}
+
+.card-title{
+    max-width: 300px;
+}
+
+
 
 /* Memocard button styling */
 
@@ -72,6 +83,7 @@ button:focus {
 
 .delete{
     background-color: #fa3737;
+    display: none;
 }
 
 .delete:hover{

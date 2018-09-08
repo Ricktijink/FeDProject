@@ -107,17 +107,15 @@ nav li a i{
     margin: 0px auto;
     border-radius: 4px;
     width: 80%;
+    display: block;
     cursor: pointer;
     transition: background-color 0.2s linear;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 .createButton:hover{
     background-color: #6770c4;
-}
-
-.createButton a{
-    color: #FFFFFF;
-    text-decoration: none;
 }
 
 .createButton i{
