@@ -18,6 +18,7 @@ export class CreateMemoFormComponent implements OnInit {
     console.log(" submit the following " + this.articles.title);
 
     this.articlesService.sendArticles(this.articles).subscribe()
+    alert("Memo is created");
   }
 
   constructor(private articlesService: ArticlesService) { }

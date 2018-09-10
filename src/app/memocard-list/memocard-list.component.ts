@@ -36,6 +36,7 @@ export class MemocardListComponent implements OnInit {
       this.ngOnInit() },
       error => console.log(error)
     );   
+    alert("Memo is deleted");
   }
 
   details(id) {
