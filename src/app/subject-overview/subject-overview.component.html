@@ -7,7 +7,12 @@
         <a routerLink="" class="" [class.activated]="currentUrl == '/'">
           <i class="fas fa-home fa-lg"></i> Home
         </a>
-      </li> 
+      </li>
+      <li>
+          <a routerLink="about" [class.activated]="currentUrl == '/about'">
+            <i class="fas fa-users-cog"></i> About
+          </a>
+        </li> 
     </ul>
     <!-- Submenu 2 -->
     <ul>
@@ -46,11 +51,6 @@
       <li>
         <a routerLink="tutorial" [class.activated]="currentUrl == '/tutorial'">
           <i class="far fa-question-circle fa-lg"></i> Tutorial
-        </a>
-      </li>
-      <li>
-        <a routerLink="about" [class.activated]="currentUrl == '/about'">
-          <i class="fas fa-users-cog"></i> About
         </a>
       </li>
     </ul>  

@@ -54,7 +54,7 @@ app.get('/:subject', (req, res) => {
     connection.end()
 })
 
-// Send items to database
+// Send items to database NOTE deleted published for now
 app.post('/creatememo', (req, res) => {
     var articles = {id: 0, subject: req.body.subject, title: req.body.title, description: req.body.description, text: req.body.text};
     var connection = createMyConnection();

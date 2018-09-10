@@ -12,7 +12,7 @@
     border-bottom: none;
     display: flex;
     color: #FFFFFF;
-    padding: 20px 0px 0px 40px;
+    padding: 20px 0px 0px 30px;
     border-radius: 0px;
 }
 
@@ -23,9 +23,9 @@
     }
 
 .card-body {
-    color: #FFFFFF;
+    color: #bfbfbf;
     font-size: 14px;
-    padding: 0px 0px 20px 40px;
+    padding: 0px 0px 20px 30px;
     border-radius: 0px;
 }
 
@@ -98,4 +98,9 @@ button:focus {
 
 .details:hover{
     background-color: #eb691e;
+}
+
+.card-title > i {
+    margin-right: 10px;
+    color: #d4d4d4;
 }

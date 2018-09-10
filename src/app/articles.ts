@@ -5,3 +5,5 @@ export class Articles {
     description: string;
     text: string;
 }
+
+// Deleted the published: string; for now
