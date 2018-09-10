@@ -16,7 +16,13 @@
 </div>
 
 <div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
-    <p>
-        {{articles.text}}
-    </p>
+    <h1>{{articles.title}}</h1>
+    <h4><span class="{{articles.subject}}">{{articles.subject}}</span></h4>
+    <br><br>
+    <em><strong>{{articles.description}}</strong></em>
+    <br><br>
+    <p>{{articles.text}}</p>
+    <a routerLink="" class="createButton" [class.activated]="">
+        <i class="far fa-edit"></i> Revise Memo
+    </a>
 </div>

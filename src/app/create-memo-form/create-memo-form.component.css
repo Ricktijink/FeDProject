@@ -3,6 +3,8 @@
  .content{
     width: 100%;
     padding: 50px 80px;
+    height: 100vh;
+    overflow-y: auto;
 } 
 
 .create-form{
@@ -60,7 +62,7 @@ button[type=button]:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}
 
 /* Checken of deze nog nodig zijn later */
 

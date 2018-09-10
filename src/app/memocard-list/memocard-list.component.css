@@ -104,3 +104,60 @@ button:focus {
     margin-right: 10px;
     color: #d4d4d4;
 }
+
+span {
+    text-transform: capitalize;
+}
+
+.mysql {
+    color:#e6ae00;
+}
+
+.angular{
+    color:#FA3758;
+}
+
+.expressjs{
+    color: #FA6B41;
+}
+
+.nodejs{
+    color: #535FFC;
+}
+
+.memocard-details p {
+    line-height: 1.7;
+}
+
+/* Revise button */
+
+.createButton {
+    background-color: #4c56af;
+    border: none;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 178px;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    text-decoration: none;
+    color: #FFFFFF;
+    position: absolute;
+    right: 88px;
+    bottom: 60px;
+}
+
+.createButton:hover{
+    background-color: #6770c4;
+}
+.createButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+.createButton i{
+    margin-right: 4px;
+}
