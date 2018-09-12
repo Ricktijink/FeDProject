@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-.card:hover .delete{
+.card:hover .delete, .card:hover .revise{
     display: block;
 }
 
@@ -63,14 +63,14 @@ p.card-text {
 }
 
 .btn{
-    width: 26px;
-    height: 26px;
+    width: 40px;
+    height: 50%;
     font-size: 12px;
     position: absolute;
     color: #FFFFFF;
     padding: 4px;
-    right: 16px;
-    border-radius: 4px;
+    left: -40px;
+    border-radius: 0;
 }
 
 .btn:focus {
@@ -84,11 +84,21 @@ button:focus {
 .delete{
     background-color: #fa3737;
     display: none;
-    left: -32px;
+    top:0;
 }
 
 .delete:hover{
     background-color: #ce2525;
+}
+
+.revise{
+    background-color: #4c56af;
+    display: none;
+    top:50%;
+}
+
+.revise:hover{
+    background-color: #6770c4;
 }
 
 .details{
@@ -131,33 +141,48 @@ span {
 
 /* Revise button */
 
-.createButton {
-    background-color: #4c56af;
+.memoButton {
     border: none;
     padding: 10px 30px;
     text-align: center;
     font-size: 14px;
     border-radius: 4px;
-    width: 178px;
+    width: 130px;
     display: block;
     cursor: pointer;
     transition: background-color 0.2s linear;
     text-decoration: none;
     color: #FFFFFF;
     position: absolute;
-    right: 88px;
-    bottom: 60px;
 }
 
-.createButton:hover{
-    background-color: #6770c4;
+.memoButton i{
+    margin-right: 4px;
 }
-.createButton:active {
+
+.memoButton:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}
 
-.createButton i{
-    margin-right: 4px;
+.reviseMemo{
+    right: 88px;
+    bottom: 60px;
+    background-color: #4c56af;
+
+}
+
+.reviseMemo:hover{
+    background-color: #6770c4;
+}
+
+.deleteMemo{
+    right: 238px;
+    bottom: 60px;
+    background-color: #fa3737;
+}
+
+.deleteMemo:hover{
+    background-color: #ce2525;
 }
