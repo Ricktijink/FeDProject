@@ -38,7 +38,7 @@
 }
 
 .card:hover {
-    border-left: 6px solid #7f8390;
+    border-left: 40px solid #fa3737;
     cursor: pointer;
 }
 
@@ -84,6 +84,7 @@ button:focus {
 .delete{
     background-color: #fa3737;
     display: none;
+    left: -32px;
 }
 
 .delete:hover{
