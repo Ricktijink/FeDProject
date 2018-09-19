@@ -28,9 +28,13 @@ Run `Nodemon server.js` for a database server. Navigate to `http://localhost:300
 Queries to show how many records per subject 
 
 all -> SELECT COUNT(*) FROM articles;
+
 mysql -> SELECT COUNT(*) FROM articles WHERE subject = 'mysql';
+
 expressjs -> SELECT COUNT(*) FROM articles WHERE subject = 'expressjs';
+
 angular -> SELECT COUNT(*) FROM articles WHERE subject = 'angular';
+
 nodejs -> SELECT COUNT(*) FROM articles WHERE subject = 'nodejs';
 
 ...
