@@ -2,16 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../articles.service';
 import { Articles } from '../articles';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-memocard-list',
   templateUrl: './memocard-list.component.html',
-  styleUrls: ['./memocard-list.component.css']
+  styleUrls: ['./memocard-list.component.css'],
+
+  // Animation for memo's:
+  animations: [
+    trigger('listStagger', [
+      transition('* <=> *', [
+        query(
+          ':enter',
+          [
+            style({ opacity: 0, transform: 'translateX(-392px)' }),
+            stagger(
+              '50ms',
+              animate(
+                '300ms ease-out',
+                style({ opacity: 1, transform: 'translateX(0px)' })
+              )
+            )
+          ],
+          { optional: true }
+        ),
+        query(':leave', animate('50ms', style({ opacity: 0 })), {
+          optional: true
+        })
+      ])
+    ])
+  ]
 })
 export class MemocardListComponent implements OnInit {
   
-  
-
   articlesDT
   articleDetails: Articles
   showDetails = false;
