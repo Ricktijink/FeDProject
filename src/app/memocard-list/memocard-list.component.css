@@ -12,7 +12,7 @@
     border-bottom: none;
     display: flex;
     color: #FFFFFF;
-    padding: 20px 0px 0px 40px;
+    padding: 20px 0px 0px 30px;
     border-radius: 0px;
 }
 
@@ -23,9 +23,9 @@
     }
 
 .card-body {
-    color: #FFFFFF;
+    color: #bfbfbf;
     font-size: 14px;
-    padding: 0px 0px 20px 40px;
+    padding: 0px 0px 20px 30px;
     border-radius: 0px;
 }
 
@@ -38,12 +38,23 @@
 }
 
 .card:hover {
-    border-left: 6px solid #7f8390;
+    border-left: 40px solid #fa3737;
     cursor: pointer;
 }
-p.card-text {
-    max-width: 290px;
+
+.card:hover .delete, .card:hover .revise{
+    display: block;
 }
+
+p.card-text {
+    max-width: 270px;
+}
+
+.card-title{
+    max-width: 300px;
+}
+
+
 
 /* Memocard button styling */
 
@@ -52,14 +63,14 @@ p.card-text {
 }
 
 .btn{
-    width: 26px;
-    height: 26px;
+    width: 40px;
+    height: 50%;
     font-size: 12px;
     position: absolute;
     color: #FFFFFF;
     padding: 4px;
-    right: 16px;
-    border-radius: 4px;
+    left: -40px;
+    border-radius: 0;
 }
 
 .btn:focus {
@@ -72,10 +83,22 @@ button:focus {
 
 .delete{
     background-color: #fa3737;
+    display: none;
+    top:0;
 }
 
 .delete:hover{
     background-color: #ce2525;
+}
+
+.revise{
+    background-color: #4c56af;
+    display: none;
+    top:50%;
+}
+
+.revise:hover{
+    background-color: #6770c4;
 }
 
 .details{
@@ -86,4 +109,80 @@ button:focus {
 
 .details:hover{
     background-color: #eb691e;
+}
+
+.card-title > i {
+    margin-right: 10px;
+}
+
+span {
+    text-transform: capitalize;
+}
+
+.mysql {
+    color:#e6ae00;
+}
+
+.angular{
+    color:#FA3758;
+}
+
+.expressjs{
+    color: #FA6B41;
+}
+
+.nodejs{
+    color: #535FFC;
+}
+
+.memocard-details p {
+    line-height: 1.7;
+}
+
+/* Revise button */
+
+.memoButton {
+    border: none;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 130px;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    text-decoration: none;
+    color: #FFFFFF;
+    position: absolute;
+}
+
+.memoButton i{
+    margin-right: 4px;
+}
+
+.memoButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.reviseMemo{
+    right: 88px;
+    bottom: 60px;
+    background-color: #4c56af;
+
+}
+
+.reviseMemo:hover{
+    background-color: #6770c4;
+}
+
+.deleteMemo{
+    right: 238px;
+    bottom: 60px;
+    background-color: #fa3737;
+}
+
+.deleteMemo:hover{
+    background-color: #ce2525;
 }

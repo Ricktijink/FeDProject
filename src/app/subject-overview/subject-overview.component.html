@@ -7,42 +7,40 @@
         <a routerLink="" class="" [class.activated]="currentUrl == '/'">
           <i class="fas fa-home fa-lg"></i> Home
         </a>
-      </li> 
+      </li>
     </ul>
     <!-- Submenu 2 -->
     <ul>
       <li>
         <a routerLink="all" [class.activated]="currentUrl == '/all'">
-          <i class="fas fa-laptop-code fa-lg green"></i> All
+          <i class="fas fa-laptop-code fa-lg green"></i> All (4)
         </a>
       </li>
       <li>
         <a routerLink="mysql" [class.activated]="currentUrl == '/mysql'">
-          <i class="fas fa-database fa-lg yellow"></i> MySQL
+          <i class="fas fa-database fa-lg yellow"></i> MySQL (1)
         </a>
       </li>
       <li>
         <a routerLink="expressjs" [class.activated]="currentUrl == '/expressjs'">
-          <i class="fas fa-server fa-lg orange"></i> ExpressJS
+          <i class="fas fa-server fa-lg orange"></i> ExpressJS (1)
         </a>
       </li>
       <li>
         <a routerLink="angular" [class.activated]="currentUrl == '/angular'">
-          <i class="fab fa-angular fa-lg pink"></i> Angular
+          <i class="fab fa-angular fa-lg pink"></i> Angular (1)
         </a>
       </li>
       <li>
         <a routerLink="nodejs" [class.activated]="currentUrl == '/nodejs'">
-          <i class="fab fa-node-js fa-lg purple"></i> NodeJS
+          <i class="fab fa-node-js fa-lg purple"></i> NodeJS (1)
         </a>
       </li>
     </ul>
     <!-- Create article button -->
-    <div class="createButton">
-      <a routerLink="creatememo" [class.activated]="currentUrl == '/creatememo'">
-        <i class="fas fa-plus"></i> Add Memo
-      </a>
-    </div>
+    <a routerLink="creatememo" class="createButton" [class.activated]="currentUrl == '/creatememo'">
+      <i class="fas fa-plus"></i> Add Memo
+    </a>
     <!-- Footer menu -->
     <ul class="footermenu">
       <li>
@@ -54,7 +52,7 @@
         <a routerLink="about" [class.activated]="currentUrl == '/about'">
           <i class="fas fa-users-cog"></i> About
         </a>
-      </li>
+      </li> 
     </ul>  
   </nav>
 </div>

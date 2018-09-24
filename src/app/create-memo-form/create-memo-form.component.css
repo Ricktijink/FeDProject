@@ -1,7 +1,20 @@
 /* Input fields styling */
 
+ .content{
+    width: 100%;
+    padding: 50px 80px;
+    height: 100vh;
+    overflow-y: auto;
+} 
+
+.create-form{
+    width: 40%;
+    height: auto;
+    margin: 20px auto;
+}
+
 input[type=text] {
-    width: 60%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -11,7 +24,7 @@ input[type=text] {
 }
 
 select {
-    width: 60%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     border: none;
@@ -20,7 +33,7 @@ select {
 }
 
 input[type=textarea] {
-    width: 60%;
+    width: 100%;
     height: 100px;
     padding: 12px 20px;
     margin: 8px 0;
@@ -30,7 +43,7 @@ input[type=textarea] {
 }
 
 button[type=button] {
-    width: 60%;
+    width: 100%;
     background-color: #4c56af;
     color: white;
     padding: 14px 20px;
@@ -43,6 +56,12 @@ button[type=button] {
 
 button[type=button]:hover {
     background-color: #6770c4;
+}
+
+button[type=button]:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 /* Checken of deze nog nodig zijn later */

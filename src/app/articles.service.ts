@@ -28,7 +28,7 @@ export class ArticlesService {
 
   // Send items to database
   sendArticles (articles: Articles) {
-    return this.http.post('http://localhost:3000/', articles)
+    return this.http.post('http://localhost:3000/creatememo', articles)
     .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
     );
   }
