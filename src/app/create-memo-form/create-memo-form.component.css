@@ -42,7 +42,7 @@ input[type=textarea] {
     box-sizing: border-box;
 }
 
-button[type=button] {
+button[type=submit] {
     width: 100%;
     background-color: #4c56af;
     color: white;
@@ -54,11 +54,16 @@ button[type=button] {
     transition: background-color 0.2s linear;
 }
 
-button[type=button]:hover {
+button[type=submit]:disabled {
+    background-color: #b4b4b4;
+    cursor: default;
+}
+
+button[type=submit]:hover:enabled {
     background-color: #6770c4;
 }
 
-button[type=button]:active {
+button[type=submit]:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
@@ -76,5 +81,8 @@ button[type=button]:active {
 
 .alert{
     color:red;
+}
+.ng-untouched {
+    border: none !important;
 }
 

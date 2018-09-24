@@ -3,7 +3,8 @@ export class Articles {
     subject: string;
     title:string;
     description: string;
+    published: Date;
     text: string;
+    
 }
-
-// Deleted the published: string; for now
+// Deleted the  for now
