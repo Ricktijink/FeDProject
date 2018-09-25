@@ -49,7 +49,7 @@ input[type=date] {
     border-radius: 4px;
 }
 
-button[type=submit] {
+button[type=button] {
     width: 100%;
     background-color: #4c56af;
     color: white;
@@ -61,16 +61,16 @@ button[type=submit] {
     transition: background-color 0.2s linear;
 }
 
-button[type=submit]:disabled {
+button[type=button]:disabled {
     background-color: #b4b4b4;
     cursor: default;
 }
 
-button[type=submit]:hover:enabled {
+button[type=button]:hover:enabled {
     background-color: #6770c4;
 }
 
-button[type=submit]:active {
+button[type=button]:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);

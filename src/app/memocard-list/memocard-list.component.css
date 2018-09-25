@@ -156,6 +156,7 @@ span {
     text-decoration: none;
     color: #FFFFFF;
     float: left;
+    margin-bottom: 10px;
 }
 
 .memoButton i{

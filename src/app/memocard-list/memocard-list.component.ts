@@ -43,14 +43,14 @@ export class MemocardListComponent implements OnInit {
   }
 
   getSubject(subject) {
-    console.log("Subject: " + subject)
+    console.log("You have clicked the: \'" + subject + "\' subject")
     this.articlesService.getSubject(subject).subscribe(
       articles => this.articlesDT = articles, error => console.log(error)
     );
   }
 
   delete(id) {
-    console.log("delete " + id)
+    console.log("Memo with id \'" + id + "\' is deleted")
     this.articlesService.deleteArticle(id)
     .subscribe(() => {
       this.ngOnInit() },
@@ -60,7 +60,7 @@ export class MemocardListComponent implements OnInit {
   }
 
   details(id) {
-    console.log("details " + id)
+    console.log("Showing the details of Memo \'" + id + "\'")
     this.showDetails= true
     this.articlesService.articleDetails(id)
     .subscribe(
