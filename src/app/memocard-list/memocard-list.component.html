@@ -1,3 +1,4 @@
+<!-- TODO: Add Liststagger here for animation -->
 <div class="memocard-list" >
     <div *ngFor="let articles of articlesDT" class="card" (click)="details(articles.id)">
         <div class="card-header">
@@ -15,58 +16,50 @@
     </div>
 </div>
 
-<!-- Show memo details on click -->
-
-<!-- <div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
-    <h1>{{articles.title}}</h1>
-    <h4><span class="{{articles.subject}}">{{articles.subject}}</span></h4>
-    <br><br>
-    <em><strong>{{articles.description}}</strong></em>
-    <br><br>
-    <p>{{articles.text}}</p>
-    <a routerLink="" class="memoButton deleteMemo" [class.activated]="">
-        <i class="far fa-trash-alt"></i> Delete
-    </a>
-    <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
-        <i class="far fa-edit"></i> Revise
-    </a>
-</div> -->
-
-<!-- Show memo details with update functionality on click -->
-
-<div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
-    <!-- ID -->
-    <h4>Memo ID:</h4>
-    {{articles.id}}
-    <br><br>
-    <!-- Title -->
-    <h4>Edit title:</h4>
-    <input [(ngModel)]="articles.title" placeholder="title"/>
-    <br><br>
-    <!-- Subject -->
-    <h4>Edit subject:</h4>
-    <select [(ngModel)]="articles.subject" id="subject" name="subject" required [(ngModel)]="articles.subject">
-        <option value="" disabled selected>Select a subject</option>
-        <option value="mysql">MySQL</option>
-        <option value="expressjs">ExpressJS</option>
-        <option value="angular">Angular</option>
-        <option value="nodejs">NodeJS</option>
-    </select>
-    <br><br>
-    <!-- Description -->
-    <h4>Edit description:</h4>
-    <input [(ngModel)]="articles.description" placeholder="description"/>
-    <br><br>
-    <!-- Text -->
-    <h4>Edit text:</h4>
-    <textarea [(ngModel)]="articles.text" rows="7"></textarea>
-    <!-- <input [(ngModel)]="articles.text" placeholder="text"/> -->
-
-    <!-- Delete and Update buttons -->
-    <div class="memoDetailButtons clearfix">
+<section >
+    <!-- Show memo details on click -->
+    <div class="memocard-details" *ngIf="showDetails"  >
+        <h1>{{articleDetails?.title}}</h1>
+        <h4><span class="{{articleDetails?.subject}}">{{articleDetails?.subject}}</span></h4>
+        <br><br>
+        <em><strong>{{articleDetails?.description}}</strong></em>
+        <br><br>
+        <p>{{articleDetails?.text}}</p>
         <button class="memoButton deleteMemo" (click)="delete(articles.id)"><i class="far fa-trash-alt"></i> Delete</button>
-        <button class="memoButton updateMemo"><i class="far fa-edit"></i> Update</button>
+        <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
+            <i class="far fa-edit"></i> Revise
+        </a>
     </div>
-</div>
 
-<!-- TESTAREA END -->
+    <!-- Show memo details with update functionality on click -->
+    <!-- <div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
+        <h4>Memo ID:</h4>
+        {{articles.id}}
+        <br><br>
+        <h4>Edit title:</h4>
+        <input [(ngModel)]="articles.title" placeholder="title"/>
+        <br><br>
+        <h4>Edit subject:</h4>
+        <select [(ngModel)]="articles.subject" id="subject" name="subject" required [(ngModel)]="articles.subject">
+            <option value="" disabled selected>Select a subject</option>
+            <option value="mysql">MySQL</option>
+            <option value="expressjs">ExpressJS</option>
+            <option value="angular">Angular</option>
+            <option value="nodejs">NodeJS</option>
+        </select>
+        <br><br>
+        <h4>Edit description:</h4>
+        <input [(ngModel)]="articles.description" placeholder="description"/>
+        <br><br>
+        <h4>Edit text:</h4>
+        <textarea [(ngModel)]="articles.text" rows="7"></textarea>
+
+        <div class="memoDetailButtons clearfix">
+            <button class="memoButton deleteMemo" (click)="delete(articles.id)"><i class="far fa-trash-alt"></i> Delete</button>
+            <button class="memoButton updateMemo"><i class="far fa-edit"></i> Update</button>
+        </div>
+    </div> -->
+</section>
+
+
+

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../articles.service';
 import { Articles } from '../articles';
-import { Router, ActivatedRoute, Params } from '@angular/router';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 @Component({
@@ -65,9 +64,10 @@ export class MemocardListComponent implements OnInit {
 
   details(id) {
     console.log("details " + id)
-    this.showDetails= !this.showDetails;
-    this.articlesService.articleDetails(id).subscribe(
-      articlesDT => this.articleDetails = articlesDT[0]
+    this.showDetails= true
+    this.articlesService.articleDetails(id)
+    .subscribe(
+      articlesData => this.articleDetails = articlesData[0]
     );
   }
 

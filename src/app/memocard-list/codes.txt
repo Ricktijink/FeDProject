@@ -12,3 +12,21 @@
    (newList)=>{  
         this.articlesDT.splice(this.articlesDT.indexOf(this.articlesDT), 1);  
         }
+
+
+
+<!-- [hidden]="!showDetails" -->
+<!-- <div class="memocard-details" *ngFor="let articleInfo of articleDetails" >
+    <h1>{{articleInfo.title}}</h1>
+    <h4><span class="{{articleInfo.subject}}">{{articleInfo.subject}}</span></h4>
+    <br><br>
+    <em><strong>{{articleInfo.description}}</strong></em>
+    <br><br>
+    <p>{{articleInfo.text}}</p>
+    <a routerLink="" class="memoButton deleteMemo" [class.activated]="">
+        <i class="far fa-trash-alt"></i> Delete
+    </a>
+    <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
+        <i class="far fa-edit"></i> Revise
+    </a>
+</div> -->
