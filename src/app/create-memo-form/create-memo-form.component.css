@@ -18,7 +18,7 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -27,9 +27,8 @@ select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    border: none;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
 }
 
 input[type=textarea] {
@@ -37,9 +36,17 @@ input[type=textarea] {
     height: 100px;
     padding: 12px 20px;
     margin: 8px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
 }
 
 button[type=submit] {
@@ -82,7 +89,7 @@ button[type=submit]:active {
 .alert{
     color:red;
 }
-.ng-untouched {
+/* .ng-untouched {
     border: none !important;
-}
+} */
 
