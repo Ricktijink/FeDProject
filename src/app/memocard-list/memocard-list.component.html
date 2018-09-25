@@ -1,3 +1,5 @@
+
+
 <div class="memocard-list" [@listStagger]="articlesDT">
     <div *ngFor="let articles of articlesDT" class="card" (click)="details(articles.id)">
         <div class="card-header">
@@ -16,17 +18,21 @@
     </div>
 </div>
 
-<div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
-    <h1>{{articles.title}}</h1>
-    <h4><span class="{{articles.subject}}">{{articles.subject}}</span></h4>
-    <br><br>
-    <em><strong>{{articles.description}}</strong></em>
-    <br><br>
-    <p>{{articles.text}}</p>
-    <a routerLink="" class="memoButton deleteMemo" [class.activated]="">
-        <i class="far fa-trash-alt"></i> Delete
-    </a>
-    <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
-        <i class="far fa-edit"></i> Revise
-    </a>
-</div>
+<section >
+    <div class="memocard-details" *ngIf="showDetails"  >
+        <h1>{{articleDetails?.title}}</h1>
+        <h4><span class="{{articleDetails?.subject}}">{{articleDetails?.subject}}</span></h4>
+        <br><br>
+        <em><strong>{{articleDetails?.description}}</strong></em>
+        <br><br>
+        <p>{{articleDetails?.text}}</p>
+        <a routerLink="" class="memoButton deleteMemo" [class.activated]="">
+            <i class="far fa-trash-alt"></i> Delete
+        </a>
+        <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
+            <i class="far fa-edit"></i> Revise
+        </a>
+    </div>
+</section>
+
+

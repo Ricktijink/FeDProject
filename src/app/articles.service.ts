@@ -42,7 +42,7 @@ export class ArticlesService {
 
   // Get information of one item from database
   articleDetails(id) {
-    return this.http.get('http://localhost:3000/' + id )
+    return this.http.get('http://localhost:3000/details/' + id )
     .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
     );
   }
