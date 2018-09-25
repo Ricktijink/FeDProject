@@ -14,6 +14,7 @@ export class SubjectOverviewComponent implements OnInit {
   countSubjectMysql: number;
   countSubjectExpressjs: number;
   countSubjectAngular: number;
+  countSubjectNodejs: number;
 
   constructor(private router: Router, private articlesService: ArticlesService) {
     this.router.events.subscribe((path: NavigationEnd) => {
