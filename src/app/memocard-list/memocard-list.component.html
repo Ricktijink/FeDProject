@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
+<!-- <div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
     <h1>{{articles.title}}</h1>
     <h4><span class="{{articles.subject}}">{{articles.subject}}</span></h4>
     <br><br>
@@ -29,4 +29,45 @@
     <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
         <i class="far fa-edit"></i> Revise
     </a>
+</div> -->
+
+<!-- TESTAREA -->
+
+<div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
+    <!-- ID -->
+    <h4>Memo ID:</h4>
+    {{articles.id}}
+    <br><br>
+    <!-- Title -->
+    <h4>Edit title:</h4>
+    <input [(ngModel)]="articles.title" placeholder="title"/>
+    <br><br>
+    <!-- Subject -->
+    <h4>Edit subject:</h4>
+    <select [(ngModel)]="articles.subject" id="subject" name="subject" required [(ngModel)]="articles.subject">
+        <option value="" disabled selected>Select a subject</option>
+        <option value="mysql">MySQL</option>
+        <option value="expressjs">ExpressJS</option>
+        <option value="angular">Angular</option>
+        <option value="nodejs">NodeJS</option>
+    </select>
+    <br><br>
+    <!-- Description -->
+    <h4>Edit description:</h4>
+    <input [(ngModel)]="articles.description" placeholder="description"/>
+    <br><br>
+    <!-- Text -->
+    <h4>Edit text:</h4>
+    <input [(ngModel)]="articles.text" placeholder="text"/>
+
+    <!-- Delete and Update buttons -->
+    <a routerLink="" class="memoButton deleteMemo" [class.activated]="">
+        <i class="far fa-trash-alt"></i> Delete
+    </a>
+    <a routerLink="" class="memoButton updateMemo" [class.activated]="">
+        <i class="far fa-edit"></i> Update
+    </a>
 </div>
+
+
+<!-- TESTAREA END -->

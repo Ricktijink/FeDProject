@@ -147,7 +147,7 @@ span {
     text-align: center;
     font-size: 14px;
     border-radius: 4px;
-    width: 130px;
+    width: 140px;
     display: block;
     cursor: pointer;
     transition: background-color 0.2s linear;
@@ -185,4 +185,27 @@ span {
 
 .deleteMemo:hover{
     background-color: #ce2525;
+}
+
+.updateMemo{
+    right: 88px;
+    bottom: 60px;
+    background-color: #ee7936;
+
+}
+
+.updateMemo:hover{
+    background-color: #c95c1d;
+}
+
+/* Input fields */
+
+input, select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
