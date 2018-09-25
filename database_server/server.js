@@ -85,9 +85,9 @@ app.delete('/:id', (req, res) => {
 })
 
 // Get information of one item from database
-app.get('/:id', (req, res) => {
+app.get('/details/:id', (req, res) => {
 
-    console.log("in get one " + req.params.id)
+    console.log("in get one --" + req.params.id)
 
     var connection = createMyConnection();
 
@@ -95,9 +95,10 @@ app.get('/:id', (req, res) => {
     connection.query('select * from articles where id = ?', req.params.id , function (err, rows, fields) {
         if(err)
         console.log(err)
-
+        console.log("in get details " + rows)
         res.send(JSON.stringify(rows))
     })
+    
     connection.end()
 })
 
