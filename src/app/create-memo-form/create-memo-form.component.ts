@@ -22,7 +22,7 @@ export class CreateMemoFormComponent implements OnInit {
     this.articlesService.sendArticles(this.articles).subscribe()
     alert("New Memo is created");
     // TODO: make sure this goes to /all and refreshes
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/creatememo');
   }
 
   constructor(private router: Router, private articlesService: ArticlesService) { }

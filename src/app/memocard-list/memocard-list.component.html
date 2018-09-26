@@ -1,18 +1,19 @@
 <!-- TODO: Add Liststagger here for animation -->
 <div class="memocard-list" [@listStagger]="articlesDT">
-    <div *ngFor="let articles of articlesDT" class="card" (click)="details(articles.id)">
-        <div class="card-header">
-            <div>
-                <h5 class="card-title"><i class="far fa-sticky-note {{articles.subject}}"></i>{{articles.id}}. {{articles.title}}</h5>
-                <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
+    <div *ngFor="let articles of articlesDT" class="card">
+        <div class="cardclick" (click)="details(articles.id)">
+            <div class="card-header">
+                <div>
+                    <h5 class="card-title"><i class="far fa-sticky-note {{articles.subject}}"></i>{{articles.id}}. {{articles.title}}</h5>
+                    <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
+                </div>
             </div>
-            <button class="btn delete" (click)="delete(articles.id)"><i class="far fa-trash-alt fa-lg"></i></button>
-            <button class="btn revise"><i class="far fa-edit fa-lg"></i></button>
+            <div class="card-body">
+                <p class="card-text">{{articles.description}}</p>
+            </div>
         </div>
-        <div class="card-body">
-        
-            <p class="card-text">{{articles.description}}</p>
-        </div>
+        <button class="btn delete" (click)="delete(articles.id)"><i class="far fa-trash-alt fa-lg"></i></button>
+        <button class="btn revise"><i class="far fa-edit fa-lg"></i></button>
     </div>
 </div>
 
