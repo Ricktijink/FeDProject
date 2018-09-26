@@ -58,7 +58,7 @@ export class MemocardListComponent implements OnInit {
       error => console.log(error)
     );   
     alert("Memo " + id + " is deleted");
-    this.router.navigateByUrl('/all');
+    // this.router.navigateByUrl('/all');
     this.showDetails = false;
   }
 
