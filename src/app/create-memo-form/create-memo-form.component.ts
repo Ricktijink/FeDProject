@@ -18,11 +18,10 @@ export class CreateMemoFormComponent implements OnInit {
   submit() {
     // Console log test the input
     console.log("New Memo created: Name \'" + this.articles.title + "\' Subject \'" + this.articles.subject + "\'");
-
-    this.articlesService.sendArticles(this.articles).subscribe()
+    this.articlesService.sendArticles(this.articles).subscribe( () => 
+    window.location.href = '/all')
     alert("New Memo is created");
-    // TODO: make sure this goes to /all and refreshes
-    this.router.navigateByUrl('/creatememo');
+    // FIXME: this.router.navigateByUrl('/all'))
   }
 
   constructor(private router: Router, private articlesService: ArticlesService) { }
