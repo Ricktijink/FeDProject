@@ -15,7 +15,7 @@
         [(ngModel)]="articles.subject"
         required
       >
-        <option value="" disabled selected >Select a subject</option>
+        <option value="x"  >Select a subject</option>
         <option value="mysql">MySQL</option>
         <option value="expressjs">ExpressJS</option>
         <option value="angular">Angular</option>
@@ -73,14 +73,11 @@
 
     <button 
       type="submit" 
-      (click)="submit()" 
-      
+      (click)="submit();" 
       [disabled]="!newArticleForm.form.valid"
     >
-    <!-- (click)="submit()"  -->
-      Save Memo
+      Save Memo 
     </button>
-
   </form>  
 </div>
   
