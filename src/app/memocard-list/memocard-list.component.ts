@@ -36,7 +36,7 @@ export class MemocardListComponent implements OnInit {
   articlesDT
   articleDetails: Articles
   showDetails = false;
-
+  memoEdit = false;
   constructor(private router: Router, private articlesService: ArticlesService) { }
 
   getArticles() {
@@ -45,6 +45,7 @@ export class MemocardListComponent implements OnInit {
 
   getSubject(subject) {
     console.log("You have clicked the: \'" + subject + "\' subject")
+    
     this.articlesService.getSubject(subject).subscribe(
       articles => this.articlesDT = articles, error => console.log(error)
     );
@@ -60,11 +61,23 @@ export class MemocardListComponent implements OnInit {
     alert("Memo " + id + " is deleted");
     // this.router.navigateByUrl('/all');
     this.showDetails = false;
+    this.memoEdit = false;
   }
 
   details(id) {
     console.log("Showing the details of Memo \'" + id + "\'")
+    this.memoEdit = false;
     this.showDetails= true
+    this.articlesService.articleDetails(id)
+    .subscribe(
+      articlesData => this.articleDetails = articlesData[0]
+    );
+  }
+
+  editMemo(id) {
+    console.log("Edit mode of the details of Memo \'" + id + "\'")
+    this.showDetails= false
+    this.memoEdit = true;
     this.articlesService.articleDetails(id)
     .subscribe(
       articlesData => this.articleDetails = articlesData[0]
