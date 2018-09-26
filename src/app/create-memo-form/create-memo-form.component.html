@@ -2,7 +2,6 @@
   <h1>Create a new Memo</h1>
   <form 
     class="create-form" 
-    
     #newArticleForm="ngForm"
   >
     <br>
@@ -74,13 +73,10 @@
     <button 
       type="button" 
       (click)="submit()" 
-      
       [disabled]="!newArticleForm.form.valid"
     >
-    <!-- (click)="submit()"  -->
-      Save Memo
+      Save Memo 
     </button>
-
   </form>  
 </div>
   
