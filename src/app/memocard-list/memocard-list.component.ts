@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../articles.service';
 import { Articles } from '../articles';
-import { Router, ActivatedRoute, Params } from '@angular/router';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-memocard-list',
@@ -16,7 +16,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
         query(
           ':enter',
           [
-            style({ opacity: 0, transform: 'translateX(-392px)' }),
+            style({ opacity: 0, transform: 'translateX(-32px)' }),
             stagger(
               '50ms',
               animate(
@@ -26,10 +26,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
             )
           ],
           { optional: true }
-        ),
-        query(':leave', animate('50ms', style({ opacity: 0 })), {
-          optional: true
-        })
+        )
       ])
     ])
   ]
@@ -40,34 +37,37 @@ export class MemocardListComponent implements OnInit {
   articleDetails: Articles
   showDetails = false;
 
-  constructor(private articlesService: ArticlesService) { }
+  constructor(private router: Router, private articlesService: ArticlesService) { }
 
   getArticles() {
     this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error))
   }
 
   getSubject(subject) {
-    console.log("Subject: " + subject)
+    console.log("You have clicked the: \'" + subject + "\' subject")
     this.articlesService.getSubject(subject).subscribe(
       articles => this.articlesDT = articles, error => console.log(error)
     );
   }
 
   delete(id) {
-    console.log("delete " + id)
+    console.log("Memo with id \'" + id + "\' is deleted")
     this.articlesService.deleteArticle(id)
     .subscribe(() => {
       this.ngOnInit() },
       error => console.log(error)
     );   
-    alert("Memo is deleted");
+    alert("Memo " + id + " is deleted");
+    this.router.navigateByUrl('/all');
+    this.showDetails = false;
   }
 
   details(id) {
-    console.log("details " + id)
-    this.showDetails= !this.showDetails;
-    this.articlesService.articleDetails(id).subscribe(
-      articlesDT => this.articleDetails = articlesDT[0]
+    console.log("Showing the details of Memo \'" + id + "\'")
+    this.showDetails= true
+    this.articlesService.articleDetails(id)
+    .subscribe(
+      articlesData => this.articleDetails = articlesData[0]
     );
   }
 

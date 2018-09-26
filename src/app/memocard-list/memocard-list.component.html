@@ -1,33 +1,68 @@
+<!-- TODO: Add Liststagger here for animation -->
 <div class="memocard-list" [@listStagger]="articlesDT">
-    <div *ngFor="let articles of articlesDT" class="card" (click)="details(articles.id)">
-        <div class="card-header">
-            <div>
-                <h5 class="card-title"><i class="far fa-sticky-note {{articles.subject}}"></i>{{articles.title}}</h5>
-                <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
+    <div *ngFor="let articles of articlesDT" class="card">
+        <div class="cardclick" (click)="details(articles.id)">
+            <div class="card-header">
+                <div>
+                    <h5 class="card-title"><i class="far fa-sticky-note {{articles.subject}}"></i>{{articles.id}}. {{articles.title}}</h5>
+                    <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
+                </div>
             </div>
-            <button class="btn delete" (click)="delete(articles.id)"><i class="far fa-trash-alt fa-lg"></i></button>
-            <button class="btn revise"><i class="far fa-edit fa-lg"></i></button>
+            <div class="card-body">
+                <p class="card-text">{{articles.description}}</p>
+            </div>
         </div>
-        <div class="card-body">
-        
-            <p class="card-text">{{articles.description}}</p>
-            <!-- <button class="btn details" type="submit" (click)="details(articles.id)"><i class="fas fa-align-left"></i></button> -->
-        </div>
+        <button class="btn delete" (click)="delete(articles.id)"><i class="far fa-trash-alt fa-lg"></i></button>
+        <button class="btn revise"><i class="far fa-edit fa-lg"></i></button>
     </div>
 </div>
 
-<div class="memocard-details" *ngFor="let articles of articlesDT" [hidden]="!showDetails">
-    <h1>{{articles.title}}</h1>
-    <h4><span class="{{articles.subject}}">{{articles.subject}}</span></h4>
-    <br><br>
-    <em><strong>{{articles.description}}</strong></em>
-    <br><br>
-    <p>{{articles.text}}</p>
-    <a routerLink="" class="memoButton deleteMemo" [class.activated]="">
-        <i class="far fa-trash-alt"></i> Delete
-    </a>
-    <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
-        <i class="far fa-edit"></i> Revise
-    </a>
-</div>
+<section >
+    <!-- Show memo details on click -->
+    <!-- <div class="memocard-details" *ngIf="showDetails"  >
+        <h1>{{articleDetails?.title}}</h1>
+        <h4><span class="{{articleDetails?.subject}}">{{articleDetails?.subject}}</span></h4>
+        <br><br>
+        <em><strong>{{articleDetails?.description}}</strong></em>
+        <br><br>
+        <p>{{articleDetails?.text}}</p>
+        <button class="memoButton deleteMemo" (click)="delete(articleDetails.id)"><i class="far fa-trash-alt"></i> Delete</button>
+        <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
+            <i class="far fa-edit"></i> Revise
+        </a>
+    </div> -->
+
+    <!-- FIXME: Fix this sheeeit -->
+    <!-- Show memo details with update functionality on click -->
+    <div class="memocard-details" *ngIf="showDetails"  >
+        <h4>Memo ID:</h4>
+        {{articleDetails?.id}}
+        <br><br>
+        <h4>Edit title:</h4>
+        <input *ngIf="articleDetails?.title" [(ngModel)]="articleDetails.title" placeholder="Enter title">
+        <br><br>
+        <h4>Edit subject:</h4>
+        <select *ngIf="articleDetails?.subject"  [(ngModel)]="articleDetails.subject" required [(ngModel)]="articleDetails.subject">
+            <option value="" disabled selected>Select a subject</option>
+            <option value="mysql">MySQL</option>
+            <option value="expressjs">ExpressJS</option>
+            <option value="angular">Angular</option>
+            <option value="nodejs">NodeJS</option>
+        </select>
+        <br><br>
+        <h4>Edit description:</h4>
+        <input *ngIf="articleDetails?.description" [(ngModel)]="articleDetails.description" placeholder="Enter description"/>
+        <br><br>
+        <h4>Edit text:</h4>
+        <textarea *ngIf="articleDetails?.text" [(ngModel)]="articleDetails.text" rows="7" placeholder="Enter text"></textarea>
+
+        <div class="memoDetailButtons clearfix">
+            <button class="memoButton deleteMemo" (click)="delete(articleDetails.id)"><i class="far fa-trash-alt"></i> Delete</button>
+            <!-- TODO: Add update functionality -->
+            <button class="memoButton updateMemo"><i class="far fa-edit"></i> Update</button>
+        </div>
+    </div>
+</section>
+
+
 

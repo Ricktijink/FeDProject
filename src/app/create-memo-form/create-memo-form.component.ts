@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // test
 import { Articles } from '../articles';
@@ -11,17 +12,22 @@ import { ArticlesService } from '../articles.service';
 })
 export class CreateMemoFormComponent implements OnInit {
 
-  articles: Articles = { id: 0, subject: '', title: '', description: '', text: '' }
+  articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
   
+
   submit() {
     // Console log test the input
-    console.log(" submit the following " + this.articles.title);
+    console.log("New Memo created: Name \'" + this.articles.title + "\' Subject \'" + this.articles.subject + "\'");
 
     this.articlesService.sendArticles(this.articles).subscribe()
-    alert("Memo is created");
+    alert("New Memo is created");
+    // TODO: make sure this goes to /all and refreshes
+    this.router.navigateByUrl('/creatememo');
   }
 
-  constructor(private articlesService: ArticlesService) { }
+  constructor(private router: Router, private articlesService: ArticlesService) { }
+
+  
 
   ngOnInit() {
   }
