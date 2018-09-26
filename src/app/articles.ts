@@ -7,4 +7,3 @@ export class Articles {
     text: string;
     
 }
-// Deleted the  for now
