@@ -45,6 +45,7 @@ nav {
     text-decoration: none;
     font-weight: 200;
     line-height: 16px;
+    font-size: 14px;
   }
 
   nav ul li a:hover{
