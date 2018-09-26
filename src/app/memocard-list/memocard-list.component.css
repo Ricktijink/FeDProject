@@ -58,6 +58,13 @@ p.card-text {
     max-width: 300px;
 }
 
+/* Memo */
+.memo {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+
 /* Smaal Memocard buttons */
 
 .btn-link {
