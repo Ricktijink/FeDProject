@@ -12,7 +12,7 @@ import { ArticlesService } from '../articles.service';
 })
 export class CreateMemoFormComponent implements OnInit {
 
-  articles: Articles = { id: 0, subject: 'x', title: '', description: '', published: new Date(), text: ''}
+  articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
   
 
   submit() {

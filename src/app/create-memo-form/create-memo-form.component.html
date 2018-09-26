@@ -2,7 +2,6 @@
   <h1>Create a new Memo</h1>
   <form 
     class="create-form" 
-    
     #newArticleForm="ngForm"
   >
     <br>
@@ -15,7 +14,7 @@
         [(ngModel)]="articles.subject"
         required
       >
-        <option value="x"  >Select a subject</option>
+        <option value="" disabled selected >Select a subject</option>
         <option value="mysql">MySQL</option>
         <option value="expressjs">ExpressJS</option>
         <option value="angular">Angular</option>
