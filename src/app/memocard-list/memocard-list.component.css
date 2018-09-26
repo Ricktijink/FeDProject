@@ -1,5 +1,9 @@
 /* Memocard styling */
 
+.clearfix{
+    clear: both;
+}
+
 .card 
 {
     width: 100%;
@@ -54,9 +58,7 @@ p.card-text {
     max-width: 300px;
 }
 
-
-
-/* Memocard button styling */
+/* Smaal Memocard buttons */
 
 .btn-link {
     margin-top: -30px;
@@ -139,11 +141,11 @@ span {
     line-height: 1.7;
 }
 
-/* Revise button */
+/* Memo Detail buttons */
 
 .memoButton {
     border: none;
-    padding: 10px 30px;
+    padding: 10px 20px;
     text-align: center;
     font-size: 14px;
     border-radius: 4px;
@@ -153,7 +155,8 @@ span {
     transition: background-color 0.2s linear;
     text-decoration: none;
     color: #FFFFFF;
-    position: absolute;
+    float: left;
+    margin-bottom: 10px;
 }
 
 .memoButton i{
@@ -167,8 +170,6 @@ span {
 }
 
 .reviseMemo{
-    right: 88px;
-    bottom: 60px;
     background-color: #4c56af;
 
 }
@@ -178,11 +179,30 @@ span {
 }
 
 .deleteMemo{
-    right: 238px;
-    bottom: 60px;
     background-color: #fa3737;
+    margin-right: 10px;
 }
 
 .deleteMemo:hover{
     background-color: #ce2525;
+}
+
+.updateMemo{
+    background-color: #ee7936;
+}
+
+.updateMemo:hover{
+    background-color: #c95c1d;
+}
+
+/* Input fields */
+
+input, select, textarea {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
