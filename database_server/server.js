@@ -25,7 +25,7 @@ function createMyConnection() {
 }
 
 // Get items from database
-app.get('/', (req, res) => {
+app.get('/memo', (req, res) => {
     var connection = createMyConnection();
     connection.connect()
 
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 })
 
 // Get items of a specified subject from database
-app.get('/:subject', (req, res) => {
+app.get('/memo/:subject', (req, res) => {
     var connection = createMyConnection();
     connection.connect()
 
@@ -70,7 +70,7 @@ app.post('/creatememo', (req, res) => {
 });
 
 // Delete items from database
-app.delete('/:id', (req, res) => {
+app.delete('/memo/:id', (req, res) => {
 
     var connection = createMyConnection();
 
@@ -99,6 +99,81 @@ app.get('/details/:id', (req, res) => {
         res.send(JSON.stringify(rows))
     })
     
+    connection.end()
+})
+
+// TEST count subject all
+
+app.get('/countSubjectAll', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT * FROM articles', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send(JSON.stringify(rows))
+    })
+    connection.end()
+})
+
+// TEST count subject mysql
+
+app.get('/countSubjectMysql', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT * FROM articles WHERE subject = \'mysql\'', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send(JSON.stringify(rows))
+    })
+    connection.end()
+})
+
+// TEST count subject expressjs
+
+app.get('/countSubjectExpressjs', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT * FROM articles WHERE subject = \'expressjs\'', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send(JSON.stringify(rows))
+    })
+    connection.end()
+})
+
+// TEST count subject expressjs
+
+app.get('/countSubjectAngular', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT * FROM articles WHERE subject = \'angular\'', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send(JSON.stringify(rows))
+    })
+    connection.end()
+})
+
+// TEST count subject nodejs
+
+app.get('/countSubjectNodejs', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT * FROM articles WHERE subject = \'nodejs\'', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send(JSON.stringify(rows))
+    })
     connection.end()
 })
 

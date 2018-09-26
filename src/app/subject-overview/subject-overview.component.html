@@ -13,27 +13,32 @@
     <ul>
       <li>
         <a routerLink="all" [class.activated]="currentUrl == '/all'">
-          <i class="fas fa-laptop-code fa-lg green"></i> All ({{articlesDT.length}})
+          <i class="fas fa-laptop-code fa-lg green"></i> All 
+          ({{countSubjectAll?.length}})
         </a>
       </li>
       <li>
         <a routerLink="mysql" [class.activated]="currentUrl == '/mysql'">
-          <i class="fas fa-database fa-lg yellow"></i> MySQL ({{articlesDT.length}})
+          <i class="fas fa-database fa-lg yellow"></i> MySQL 
+          ({{countSubjectMysql?.length}})
         </a>
       </li>
       <li>
         <a routerLink="expressjs" [class.activated]="currentUrl == '/expressjs'">
-          <i class="fas fa-server fa-lg orange"></i> ExpressJS ({{articlesDT.length}})
+          <i class="fas fa-server fa-lg orange"></i> ExpressJS
+          ({{countSubjectExpressjs?.length}})
         </a>
       </li>
       <li>
         <a routerLink="angular" [class.activated]="currentUrl == '/angular'">
-          <i class="fab fa-angular fa-lg pink"></i> Angular ({{articlesDT.length}})
+          <i class="fab fa-angular fa-lg pink"></i> Angular 
+          ({{countSubjectAngular?.length}})
         </a>
       </li>
       <li>
         <a routerLink="nodejs" [class.activated]="currentUrl == '/nodejs'">
-          <i class="fab fa-node-js fa-lg purple"></i> NodeJS ({{articlesDT.length}})
+          <i class="fab fa-node-js fa-lg purple"></i> NodeJS
+          ({{countSubjectNodejs?.length}})
         </a>
       </li>
     </ul>
