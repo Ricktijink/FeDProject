@@ -28,27 +28,27 @@ export class SubjectOverviewComponent implements OnInit {
 
       // countSubjectAll
       articlesService.countSubjectAll().subscribe((sc: SubjectCounterAll) => { 
-        this.countSubjectAll = sc.countSubjectAll  // Deze genereert in de compiler van VScode een problem indicatie maar de code is functioneel
+        this.countSubjectAll = sc.countSubjectAll  
       })
 
       // countSubjectMysql
       articlesService.countSubjectMysql().subscribe((sc: SubjectCounterMysql) => { 
-        this.countSubjectMysql = sc.countSubjectMysql  // Deze genereert in de compiler van VScode een problem indicatie maar de code is functioneel
+        this.countSubjectMysql = sc.countSubjectMysql  
       })
     
       // countSubjectExpressjs
       articlesService.countSubjectExpressjs().subscribe((sc: SubjectCounterExpressjs) => { 
-        this.countSubjectExpressjs = sc.countSubjectExpressjs  // Deze genereert in de compiler van VScode een problem indicatie maar de code is functioneel
+        this.countSubjectExpressjs = sc.countSubjectExpressjs 
       })
 
       // countSubjectAngular
       articlesService.countSubjectAngular().subscribe((sc: SubjectCounterAngular) => { 
-        this.countSubjectAngular = sc.countSubjectAngular  // Deze genereert in de compiler van VScode een problem indicatie maar de code is functioneel
+        this.countSubjectAngular = sc.countSubjectAngular  
       })
 
       // countSubjectNodejs
       articlesService.countSubjectNodejs().subscribe((sc: SubjectCounterNodejs) => { 
-        this.countSubjectNodejs = sc.countSubjectNodejs  // Deze genereert in de compiler van VScode een problem indicatie maar de code is functioneel
+        this.countSubjectNodejs = sc.countSubjectNodejs 
       })
 
       }

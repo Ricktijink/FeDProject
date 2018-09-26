@@ -19,7 +19,7 @@
 
 <section >
     <!-- Show memo details on click -->
-    <div class="memocard-details" *ngIf="showDetails"  >
+    <!-- <div class="memocard-details" *ngIf="showDetails"  >
         <h1>{{articleDetails?.title}}</h1>
         <h4><span class="{{articleDetails?.subject}}">{{articleDetails?.subject}}</span></h4>
         <br><br>
@@ -30,11 +30,11 @@
         <a routerLink="" class="memoButton reviseMemo" [class.activated]="">
             <i class="far fa-edit"></i> Revise
         </a>
-    </div>
+    </div> -->
 
     <!-- FIXME: Fix this sheeeit -->
     <!-- Show memo details with update functionality on click -->
-    <!-- <div class="memocard-details" *ngIf="showDetails"  >
+    <div class="memocard-details" *ngIf="showDetails"  >
         <h4>Memo ID:</h4>
         {{articleDetails?.id}}
         <br><br>
@@ -58,10 +58,10 @@
 
         <div class="memoDetailButtons clearfix">
             <button class="memoButton deleteMemo" (click)="delete(articleDetails.id)"><i class="far fa-trash-alt"></i> Delete</button>
-            TODO: Add update functionality
+            <!-- TODO: Add update functionality -->
             <button class="memoButton updateMemo"><i class="far fa-edit"></i> Update</button>
         </div>
-    </div> -->
+    </div>
 </section>
 
 
