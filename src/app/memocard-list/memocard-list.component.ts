@@ -92,7 +92,8 @@ export class MemocardListComponent implements OnInit {
   // Update memo
   updateMemo(articles: Articles) {
     console.log("Memo has been updated!");
-    this.articlesService.updateMemoo(articles).subscribe()
+    this.articlesService.updateMemoo(articles).subscribe( () => 
+    window.location.href = '/all')
     alert("Memo has been updated (TS)" + articles.id);
 
   }

@@ -111,7 +111,7 @@ button:focus {
 }
 
 .revise:hover{
-    background-color: #6770c4;
+    background-color: #2d3899;
 }
 
 /* .details{
@@ -161,7 +161,6 @@ span {
     text-align: center;
     font-size: 14px;
     border-radius: 4px;
-    /* width: 140px; */
     display: block;
     cursor: pointer;
     transition: background-color 0.2s linear;
@@ -176,15 +175,20 @@ span {
 }
 
 .memoButton:active {
-    background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
 /* MemoDetailButtons container */
 
-.memoDetailButtons{
+.memoDetailButtons-left{
     margin-top: 40px;
+    float:left;
+}
+
+.memoDetailButtons-right{
+    margin-top: 40px;
+    float: right;
 }
 
 /* Memo Details: Revise button */
@@ -195,17 +199,17 @@ span {
 }
 
 .reviseMemo:hover{
-    background-color: #6770c4;
+    background-color: #2d3899;
 }
 
 /* Memo Details: Back button */
 
 .backMemo{
-    background-color: #5bbb43;
+    background-color: #4c56af;
 }
 
 .backMemo:hover{
-    background-color: #6bca54;
+    background-color: #2d3899;
 }
 
 /* Memo Details: Delete button */
