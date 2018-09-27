@@ -114,15 +114,6 @@ button:focus {
     background-color: #2d3899;
 }
 
-/* .details{
-    background-color: #ff7e33;
-    top: 50px;
-}
-
-.details:hover{
-    background-color: #eb691e;
-} */
-
 .card-title > i {
     margin-right: 10px;
 }
@@ -182,12 +173,10 @@ span {
 /* MemoDetailButtons container */
 
 .memoDetailButtons-left{
-    margin-top: 40px;
     float:left;
 }
 
 .memoDetailButtons-right{
-    margin-top: 40px;
     float: right;
 }
 
@@ -238,12 +227,12 @@ span {
 
 .closeDetails{
     background-color: #fa3737;
-    padding: 5px 8px;
+    padding: 6px 8px 5px 8px;
     cursor: pointer;
     border: none;
-    font-size: 20px;
+    font-size: 14px;
     border-radius: 4px;
-    width: 40px;
+    width: 31px;
     transition: background-color 0.2s linear;
     position: absolute;
     right: 80px;
