@@ -65,7 +65,7 @@ p.card-text {
 }
 
 
-/* Smaal Memocard buttons */
+/* Memocard List: Small card buttons */
 
 .btn-link {
     margin-top: -30px;
@@ -90,6 +90,8 @@ button:focus {
     outline:0;
 }
 
+/* Memocard List: Small delete button */
+
 .delete{
     background-color: #fa3737;
     display: none;
@@ -100,6 +102,8 @@ button:focus {
     background-color: #ce2525;
 }
 
+/* Memocard List: Small revise button */
+
 .revise{
     background-color: #4c56af;
     display: none;
@@ -107,18 +111,17 @@ button:focus {
 }
 
 .revise:hover{
-    background-color: #6770c4;
+    background-color: #2d3899;
 }
 
-.details{
+/* .details{
     background-color: #ff7e33;
     top: 50px;
-
 }
 
 .details:hover{
     background-color: #eb691e;
-}
+} */
 
 .card-title > i {
     margin-right: 10px;
@@ -127,6 +130,12 @@ button:focus {
 span {
     text-transform: capitalize;
 }
+
+.memocard-details p {
+    line-height: 1.7;
+}
+
+/* Subject colors */
 
 .mysql {
     color:#e6ae00;
@@ -144,10 +153,6 @@ span {
     color: #535FFC;
 }
 
-.memocard-details p {
-    line-height: 1.7;
-}
-
 /* Memo Detail buttons */
 
 .memoButton {
@@ -156,7 +161,6 @@ span {
     text-align: center;
     font-size: 14px;
     border-radius: 4px;
-    width: 140px;
     display: block;
     cursor: pointer;
     transition: background-color 0.2s linear;
@@ -171,19 +175,44 @@ span {
 }
 
 .memoButton:active {
-    background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
+/* MemoDetailButtons container */
+
+.memoDetailButtons-left{
+    margin-top: 40px;
+    float:left;
+}
+
+.memoDetailButtons-right{
+    margin-top: 40px;
+    float: right;
+}
+
+/* Memo Details: Revise button */
+
 .reviseMemo{
     background-color: #4c56af;
-
+    
 }
 
 .reviseMemo:hover{
-    background-color: #6770c4;
+    background-color: #2d3899;
 }
+
+/* Memo Details: Back button */
+
+.backMemo{
+    background-color: #4c56af;
+}
+
+.backMemo:hover{
+    background-color: #2d3899;
+}
+
+/* Memo Details: Delete button */
 
 .deleteMemo{
     background-color: #fa3737;
@@ -194,22 +223,64 @@ span {
     background-color: #ce2525;
 }
 
+/* Memo Details: Update button */
+
 .updateMemo{
     background-color: #ee7936;
+    margin-right: 10px;
 }
 
 .updateMemo:hover{
     background-color: #c95c1d;
 }
 
+/* Memo Details: Close button */
+
+.closeDetails{
+    background-color: #fa3737;
+    padding: 5px 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    border-radius: 4px;
+    width: 40px;
+    transition: background-color 0.2s linear;
+    position: absolute;
+    right: 80px;
+}
+
+.closeDetails i{
+    color: #FFFFFF;
+}
+
+.closeDetails:hover{
+    background-color: #ce2525;
+}
+
 /* Input fields */
 
 input, select, textarea {
-    width: 90%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px auto;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+/* Checken of deze nog nodig zijn later */
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  
+input.ng-untouched,
+select.ng-untouched,
+textarea.ng-untouched {
+    border-left: 1px solid #ccc !important;
 }

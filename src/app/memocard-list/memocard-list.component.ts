@@ -36,16 +36,19 @@ export class MemocardListComponent implements OnInit {
   articlesDT
   articleDetails: Articles
   showDetails = false;
-  memoEdit = false;
-  constructor(private router: Router, private articlesService: ArticlesService) { }
 
   articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
 
+
+  memoEdit = false;
+  constructor(private router: Router, private articlesService: ArticlesService) { }
   
+  // Get all memo's
   getArticles() {
     this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error))
   }
 
+  // Get subject
   getSubject(subject) {
     console.log("You have clicked the: \'" + subject + "\' subject")
     
@@ -54,6 +57,7 @@ export class MemocardListComponent implements OnInit {
     );
   }
 
+  // Delete memo
   delete(id) {
     console.log("Memo with id \'" + id + "\' is deleted")
     this.articlesService.deleteArticle(id)
@@ -67,6 +71,7 @@ export class MemocardListComponent implements OnInit {
     this.memoEdit = false;
   }
 
+  // Show details from memo
   details(id) {
     console.log("Showing the details of Memo \'" + id + "\'")
     this.memoEdit = false;
@@ -77,14 +82,31 @@ export class MemocardListComponent implements OnInit {
     );
   }
 
+  // close details memo
+  closeDetails() {
+    console.log("Memo details closed")
+    this.showDetails = false;
+    this.memoEdit = false;
+  }
+
+  // Update memo
+  updateMemo(articles: Articles) {
+    console.log("Memo has been updated!");
+    this.articlesService.updateMemoo(articles).subscribe( () => 
+    window.location.href = '/all')
+    alert("Memo has been updated (TS)" + articles.id);
+  }
+
+  // Edit memo
   editMemo(id) {
     console.log("Edit mode of the details of Memo \'" + id + "\'")
     this.showDetails= false
-    this.memoEdit = true;
+    this.memoEdit = true
     this.articlesService.articleDetails(id)
     .subscribe(
       articlesData => this.articleDetails = articlesData[0]
     );
+    // if (!ngModel) return; // do nothing if no ng-model
   }
 
 
@@ -100,5 +122,6 @@ export class MemocardListComponent implements OnInit {
     }
     
   }
+      
 
 }
