@@ -48,9 +48,9 @@ export class ArticlesService {
   }
 
   // Get information of one item from database
-  updateMemoo(id) {
+  updateMemoo(articles: Articles) {
     console.log("service log");
-    return this.http.get('http://localhost:3000/update/' + id)
+    return this.http.post('http://localhost:3000/update', articles)
     .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
     );
   }

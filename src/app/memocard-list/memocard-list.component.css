@@ -242,7 +242,7 @@ span {
     width: 40px;
     transition: background-color 0.2s linear;
     position: absolute;
-    right: 60px;
+    right: 80px;
 }
 
 .closeDetails i{
@@ -256,7 +256,7 @@ span {
 /* Input fields */
 
 input, select, textarea {
-    width: 90%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px auto;
     display: inline-block;

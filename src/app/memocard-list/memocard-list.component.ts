@@ -90,10 +90,11 @@ export class MemocardListComponent implements OnInit {
     }
 
   // Update memo
-  updateMemo(id) {
-    console.log("Memo: Name \'" + this.articles.title + " has been updated!");
-    this.articlesService.updateMemoo(id).subscribe( )
-    alert("Memo has been updated (TS)" + id);
+  updateMemo(articles: Articles) {
+    console.log("Memo has been updated!");
+    this.articlesService.updateMemoo(articles).subscribe()
+    alert("Memo has been updated (TS)" + articles.id);
+
   }
 
   // Edit memo

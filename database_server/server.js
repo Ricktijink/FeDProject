@@ -102,14 +102,14 @@ app.get('/details/:id', (req, res) => {
 })
 
 // Update test
-app.get('/update/:id', (req, res) => {
+app.post('/update', (req, res) => {
 
-    console.log("Update wordt aangeroepen" + req.params.id)
-    var articles = {id: 0, subject: req.body.subject, title: req.body.title, description: req.body.description, text: req.body.text};
+    var articles1 = {id: req.body.id, subject: req.body.subject, title: req.body.title, description: req.body.description, text: req.body.text};
+    console.log("Update wordt aangeroepen yo" + req.body.id)
     var connection = createMyConnection();
 
     connection.connect()
-    connection.query("UPDATE articles SET title='BIERTJEEEE' WHERE id = ?", req.params.id , function (err, rows, fields) {
+    connection.query("UPDATE articles SET title= ?, subject= ?, description= ?, text= ? WHERE id = ?", [req.body.title, req.body.subject, req.body.description, req.body.text, req.body.id] , function (err, rows, fields) {
         if(err)
         console.log(err)
         res.send(JSON.stringify(rows))
