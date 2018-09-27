@@ -95,8 +95,25 @@ app.get('/details/:id', (req, res) => {
     connection.query('select * from articles where id = ?', req.params.id , function (err, rows, fields) {
         if(err)
         console.log(err)
-        console.log("in get details " + rows)
         res.send(JSON.stringify(rows))
+    })
+    
+    connection.end()
+})
+
+// Update test
+app.post('/update', (req, res) => {
+
+    var articles1 = {id: req.body.id, subject: req.body.subject, title: req.body.title, description: req.body.description, text: req.body.text};
+    console.log("Update wordt aangeroepen yo" + req.body.id)
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query("UPDATE articles SET title= ?, subject= ?, description= ?, text= ? WHERE id = ?", [req.body.title, req.body.subject, req.body.description, req.body.text, req.body.id] , function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send(JSON.stringify(rows))
+        console.log("Update gedaan")
     })
     
     connection.end()
