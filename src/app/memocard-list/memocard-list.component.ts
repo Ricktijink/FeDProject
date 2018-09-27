@@ -40,6 +40,7 @@ export class MemocardListComponent implements OnInit {
   articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
 
 
+  memoEdit = false;
   constructor(private router: Router, private articlesService: ArticlesService) { }
 
   // Get all memo's
@@ -50,6 +51,7 @@ export class MemocardListComponent implements OnInit {
   // Get subject
   getSubject(subject) {
     console.log("You have clicked the: \'" + subject + "\' subject")
+    
     this.articlesService.getSubject(subject).subscribe(
       articles => this.articlesDT = articles, error => console.log(error)
     );
@@ -66,11 +68,13 @@ export class MemocardListComponent implements OnInit {
     alert("Memo " + id + " is deleted");
     // this.router.navigateByUrl('/all');
     this.showDetails = false;
+    this.memoEdit = false;
   }
 
   // Show details from memo
   details(id) {
     console.log("Showing the details of Memo \'" + id + "\'")
+    this.memoEdit = false;
     this.showDetails= true
     this.articlesService.articleDetails(id)
     .subscribe(
@@ -78,13 +82,31 @@ export class MemocardListComponent implements OnInit {
     );
   }
 
+    // close details memo
+    closeDetails() {
+      console.log("Memo details closed")
+      this.showDetails = false;
+      this.memoEdit = false;
+    }
+
   // Update memo
   updateMemo(id) {
-    // Console log test the input
     console.log("Memo: Name \'" + this.articles.title + " has been updated!");
     this.articlesService.updateMemoo(id).subscribe( )
     alert("Memo has been updated (TS)" + id);
   }
+
+  // Edit memo
+  editMemo(id) {
+    console.log("Edit mode of the details of Memo \'" + id + "\'")
+    this.showDetails= false
+    this.memoEdit = true;
+    this.articlesService.articleDetails(id)
+    .subscribe(
+      articlesData => this.articleDetails = articlesData[0]
+    );
+  }
+
 
   ngOnInit() {
     let pathname = window.location.pathname

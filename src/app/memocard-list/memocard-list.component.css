@@ -58,7 +58,14 @@ p.card-text {
     max-width: 300px;
 }
 
-/* Smaal Memocard buttons */
+/* Memo */
+.memo {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+
+/* Memocard List: Small card buttons */
 
 .btn-link {
     margin-top: -30px;
@@ -83,6 +90,8 @@ button:focus {
     outline:0;
 }
 
+/* Memocard List: Small delete button */
+
 .delete{
     background-color: #fa3737;
     display: none;
@@ -92,6 +101,8 @@ button:focus {
 .delete:hover{
     background-color: #ce2525;
 }
+
+/* Memocard List: Small revise button */
 
 .revise{
     background-color: #4c56af;
@@ -103,15 +114,14 @@ button:focus {
     background-color: #6770c4;
 }
 
-.details{
+/* .details{
     background-color: #ff7e33;
     top: 50px;
-
 }
 
 .details:hover{
     background-color: #eb691e;
-}
+} */
 
 .card-title > i {
     margin-right: 10px;
@@ -120,6 +130,12 @@ button:focus {
 span {
     text-transform: capitalize;
 }
+
+.memocard-details p {
+    line-height: 1.7;
+}
+
+/* Subject colors */
 
 .mysql {
     color:#e6ae00;
@@ -137,10 +153,6 @@ span {
     color: #535FFC;
 }
 
-.memocard-details p {
-    line-height: 1.7;
-}
-
 /* Memo Detail buttons */
 
 .memoButton {
@@ -149,7 +161,7 @@ span {
     text-align: center;
     font-size: 14px;
     border-radius: 4px;
-    width: 140px;
+    /* width: 140px; */
     display: block;
     cursor: pointer;
     transition: background-color 0.2s linear;
@@ -169,14 +181,34 @@ span {
     transform: translateY(4px);
 }
 
+/* MemoDetailButtons container */
+
+.memoDetailButtons{
+    margin-top: 40px;
+}
+
+/* Memo Details: Revise button */
+
 .reviseMemo{
     background-color: #4c56af;
-
+    
 }
 
 .reviseMemo:hover{
     background-color: #6770c4;
 }
+
+/* Memo Details: Back button */
+
+.backMemo{
+    background-color: #5bbb43;
+}
+
+.backMemo:hover{
+    background-color: #6bca54;
+}
+
+/* Memo Details: Delete button */
 
 .deleteMemo{
     background-color: #fa3737;
@@ -187,12 +219,38 @@ span {
     background-color: #ce2525;
 }
 
+/* Memo Details: Update button */
+
 .updateMemo{
     background-color: #ee7936;
+    margin-right: 10px;
 }
 
 .updateMemo:hover{
     background-color: #c95c1d;
+}
+
+/* Memo Details: Close button */
+
+.closeDetails{
+    background-color: #fa3737;
+    padding: 5px 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    border-radius: 4px;
+    width: 40px;
+    transition: background-color 0.2s linear;
+    position: absolute;
+    right: 60px;
+}
+
+.closeDetails i{
+    color: #FFFFFF;
+}
+
+.closeDetails:hover{
+    background-color: #ce2525;
 }
 
 /* Input fields */
@@ -206,3 +264,4 @@ input, select, textarea {
     border-radius: 4px;
     box-sizing: border-box;
 }
+

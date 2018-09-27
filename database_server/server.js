@@ -105,6 +105,7 @@ app.get('/details/:id', (req, res) => {
 app.get('/update/:id', (req, res) => {
 
     console.log("Update wordt aangeroepen" + req.params.id)
+    var articles = {id: 0, subject: req.body.subject, title: req.body.title, description: req.body.description, text: req.body.text};
     var connection = createMyConnection();
 
     connection.connect()
