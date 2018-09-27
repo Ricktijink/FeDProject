@@ -47,6 +47,14 @@ export class ArticlesService {
     );
   }
 
+  // Get information of one item from database
+  updateMemoo(id) {
+    console.log("service log");
+    return this.http.get('http://localhost:3000/update/' + id)
+    .pipe(catchError((err: any, caught: Observable<{}>) => void console.log(err))
+    );
+  }
+
     // TEST counts all memo's in subject
     countSubjectAll() {
       return  this.http.get('http://localhost:3000/countSubjectAll')

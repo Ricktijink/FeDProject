@@ -59,7 +59,7 @@
         <div class="memoDetailButtons clearfix">
             <button class="memoButton deleteMemo" (click)="delete(articleDetails.id)"><i class="far fa-trash-alt"></i> Delete</button>
             <!-- TODO: Add update functionality -->
-            <button class="memoButton updateMemo"><i class="far fa-edit"></i> Update</button>
+            <button class="memoButton updateMemo" (click)="updateMemo(articleDetails.id)"><i class="far fa-edit"></i> Update</button>
         </div>
     </div>
 </section>

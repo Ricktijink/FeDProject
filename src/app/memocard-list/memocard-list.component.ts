@@ -37,12 +37,17 @@ export class MemocardListComponent implements OnInit {
   articleDetails: Articles
   showDetails = false;
 
+  articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
+
+
   constructor(private router: Router, private articlesService: ArticlesService) { }
 
+  // Get all memo's
   getArticles() {
     this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error))
   }
 
+  // Get subject
   getSubject(subject) {
     console.log("You have clicked the: \'" + subject + "\' subject")
     this.articlesService.getSubject(subject).subscribe(
@@ -50,6 +55,7 @@ export class MemocardListComponent implements OnInit {
     );
   }
 
+  // Delete memo
   delete(id) {
     console.log("Memo with id \'" + id + "\' is deleted")
     this.articlesService.deleteArticle(id)
@@ -62,6 +68,7 @@ export class MemocardListComponent implements OnInit {
     this.showDetails = false;
   }
 
+  // Show details from memo
   details(id) {
     console.log("Showing the details of Memo \'" + id + "\'")
     this.showDetails= true
@@ -71,6 +78,13 @@ export class MemocardListComponent implements OnInit {
     );
   }
 
+  // Update memo
+  updateMemo(id) {
+    // Console log test the input
+    console.log("Memo: Name \'" + this.articles.title + " has been updated!");
+    this.articlesService.updateMemoo(id).subscribe( )
+    alert("Memo has been updated (TS)" + id);
+  }
 
   ngOnInit() {
     let pathname = window.location.pathname
