@@ -27,6 +27,7 @@
             <em><strong>{{articleDetails?.description}}</strong></em>
             <br><br>
             <p>{{articleDetails?.text}}</p>
+            <br> <hr>
              <!-- Memo Detail buttons -->
              <div class="memoDetailButtons-right clearfix">
                 <button class="memoButton deleteMemo" (click)="delete(articleDetails.id)">
@@ -63,22 +64,25 @@
             <br><br>
             <h4>Edit text:</h4>
             <textarea *ngIf="articleDetails?.text" [(ngModel)]="articleDetails.text" rows="7" placeholder="Enter text"></textarea>
-            <div class="memoDetailButtons-left">
-                <!-- Back button -->
-                <button class="memoButton backMemo" (click)="details(articleDetails.id)">
-                        <i class="fas fa-arrow-left"></i> Back
-                </button>
-            </div>
-            <!-- Memo Detail buttons -->
-            <div class="memoDetailButtons-right">
-                <!-- Delete button -->
-                <button class="memoButton deleteMemo" (click)="delete(articleDetails.id)">
-                    <i class="far fa-trash-alt"></i> Delete
-                </button>
-                <!-- Update button -->
-                <button class="memoButton updateMemo" (click)="updateMemo(articleDetails)">
-                    <i class="far fa-edit"></i> Update
-                </button>
+            <hr>
+            <div class="memoDetailsButtonsContainer">
+                <div class="memoDetailButtons-left">
+                    <!-- Back button -->
+                    <button class="memoButton backMemo" (click)="details(articleDetails.id)">
+                            <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                </div>
+                <!-- Memo Detail buttons -->
+                <div class="memoDetailButtons-right">
+                    <!-- Delete button -->
+                    <button class="memoButton deleteMemo" (click)="delete(articleDetails.id)">
+                        <i class="far fa-trash-alt"></i> Delete
+                    </button>
+                    <!-- Update button -->
+                    <button class="memoButton updateMemo" (click)="updateMemo(articleDetails)">
+                        <i class="far fa-edit"></i> Update
+                    </button>
+                </div>
             </div>
         </div>
     </div>
