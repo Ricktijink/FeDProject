@@ -39,6 +39,9 @@ export class MemocardListComponent implements OnInit {
   memoEdit = false;
   constructor(private router: Router, private articlesService: ArticlesService) { }
 
+  articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
+
+  
   getArticles() {
     this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error))
   }

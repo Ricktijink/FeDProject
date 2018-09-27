@@ -43,10 +43,29 @@
             {{articleDetails?.id}}
             <br><br>
             <h4>Edit title:</h4>
-            <input *ngIf="articleDetails?.title" [(ngModel)]="articleDetails.title" placeholder="Enter title">
+            <input 
+                type="text" 
+                name="title" 
+                id="title" 
+                *ngIf="articleDetails?.title; else inputTitle" 
+                [(ngModel)]="articleDetails.title"
+                placeholder="Enter title"
+            />
+            <ng-template #inputTitle>
+                <input 
+                    type="text"
+                    placeholder="Enter title"
+                    [(ngModel)]="articles.title"
+                >
+              </ng-template>
             <br><br>
             <h4>Edit subject:</h4>
-            <select *ngIf="articleDetails?.subject"  [(ngModel)]="articleDetails.subject" required [(ngModel)]="articleDetails.subject">
+            <select 
+                *ngIf="articleDetails?.subject"  
+                [(ngModel)]="articleDetails.subject"  
+                [(ngModel)]="articleDetails.subject"
+                required
+            >
                 <option value="" disabled selected>Select a subject</option>
                 <option value="mysql">MySQL</option>
                 <option value="expressjs">ExpressJS</option>
@@ -55,10 +74,19 @@
             </select>
             <br><br>
             <h4>Edit description:</h4>
-            <input *ngIf="articleDetails?.description" [(ngModel)]="articleDetails.description" placeholder="Enter description"/>
+            <input 
+                *ngIf="articleDetails?.description" 
+                [(ngModel)]="articleDetails.description" 
+                placeholder="Enter description"
+            />
             <br><br>
             <h4>Edit text:</h4>
-            <textarea *ngIf="articleDetails?.text" [(ngModel)]="articleDetails.text" rows="7" placeholder="Enter text"></textarea>
+            <textarea 
+                *ngIf="articleDetails?.text" 
+                [(ngModel)]="articleDetails.text" 
+                rows="7" 
+                placeholder="Enter text"
+            ></textarea>
 
             <div class="memoDetailButtons clearfix">
                 <button class="memoButton deleteMemo" (click)="delete(articleDetails.id)"><i class="far fa-trash-alt"></i> Delete</button>
