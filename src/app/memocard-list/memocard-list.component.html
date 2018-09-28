@@ -1,4 +1,8 @@
 <div class="memocard-list" [@listStagger]="articlesDT">
+    <div class="noMemos" *ngIf="noMemos" >
+        <p class="title">You have no memo's yet.</p>
+        <p>Use the "+ Add Memo" button on the left to create your first memo!</p>
+    </div>
     <div *ngFor="let articles of articlesDT" class="card">
         <div class="cardclick" (click)="details(articles.id)">
             <div class="card-header">
@@ -118,9 +122,10 @@
 
         </div>
     </div>
-    
 
 </section>
+
+
 
 
 

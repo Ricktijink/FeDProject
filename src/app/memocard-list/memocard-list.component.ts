@@ -36,7 +36,7 @@ export class MemocardListComponent implements OnInit {
   articlesDT
   articleDetails: Articles
   showDetails = false;
-
+  noMemos = false;
   articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
 
 
@@ -45,7 +45,13 @@ export class MemocardListComponent implements OnInit {
   
   // Get all memo's
   getArticles() {
-    this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error))
+    this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error),
+      () => {
+        if (this.articlesDT == 0) {
+          this.noMemos = true;
+        }
+      }
+    );
   }
 
   // Get subject
@@ -53,7 +59,12 @@ export class MemocardListComponent implements OnInit {
     console.log("You have clicked the: \'" + subject + "\' subject")
     
     this.articlesService.getSubject(subject).subscribe(
-      articles => this.articlesDT = articles, error => console.log(error)
+      articles => this.articlesDT = articles, error => console.log(error),
+      () => {
+        if (this.articlesDT == 0) {
+          this.noMemos = true;
+        }
+      }
     );
   }
 
