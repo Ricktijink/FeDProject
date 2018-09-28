@@ -1,7 +1,8 @@
 <div class="memocard-list" [@listStagger]="articlesDT">
     <div class="noMemos" *ngIf="noMemos" >
-        <p class="title">You have no memo's yet.</p>
-        <p>Use the "+ Add Memo" button on the left to create your first memo!</p>
+        <!-- <p class="title">You have no memo's yet. {{articlesDT.subject}} </p>  -->
+        <p class="title">Memo's will be displayed here </p> 
+        <p>Use the "+ Add Memo" button on the left to create new memo's!</p>
     </div>
     <div *ngFor="let articles of articlesDT" class="card">
         <div class="cardclick" (click)="details(articles.id)">
