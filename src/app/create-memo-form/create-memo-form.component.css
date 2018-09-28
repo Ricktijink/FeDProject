@@ -91,10 +91,9 @@ button[type=button]:active {
     border-left: 5px solid #a94442; /* red */
   }
 
-.alert{
-    color:red;
-}
-.ng-untouched {
-    border: none !important;
-}
+  input.ng-untouched,
+  select.ng-untouched,
+  textarea.ng-untouched {
+      border-left: 1px solid #ccc !important;
+  }
 

@@ -42,7 +42,7 @@ export class MemocardListComponent implements OnInit {
 
   memoEdit = false;
   constructor(private router: Router, private articlesService: ArticlesService) { }
-
+  
   // Get all memo's
   getArticles() {
     this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error))
@@ -82,12 +82,12 @@ export class MemocardListComponent implements OnInit {
     );
   }
 
-    // close details memo
-    closeDetails() {
-      console.log("Memo details closed")
-      this.showDetails = false;
-      this.memoEdit = false;
-    }
+  // close details memo
+  closeDetails() {
+    console.log("Memo details closed")
+    this.showDetails = false;
+    this.memoEdit = false;
+  }
 
   // Update memo
   updateMemo(articles: Articles) {
@@ -95,18 +95,18 @@ export class MemocardListComponent implements OnInit {
     this.articlesService.updateMemoo(articles).subscribe( () => 
     window.location.href = '/all')
     alert("Memo has been updated (TS)" + articles.id);
-
   }
 
   // Edit memo
   editMemo(id) {
     console.log("Edit mode of the details of Memo \'" + id + "\'")
     this.showDetails= false
-    this.memoEdit = true;
+    this.memoEdit = true
     this.articlesService.articleDetails(id)
     .subscribe(
       articlesData => this.articleDetails = articlesData[0]
     );
+    // if (!ngModel) return; // do nothing if no ng-model
   }
 
 
@@ -122,5 +122,6 @@ export class MemocardListComponent implements OnInit {
     }
     
   }
+      
 
 }

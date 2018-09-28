@@ -258,3 +258,23 @@ input, select, textarea {
     box-sizing: border-box;
 }
 
+button.memoButton.updateMemo:disabled {
+    background-color: #b4b4b4 ;
+    cursor: default ;
+}
+
+/* Checken of deze nog nodig zijn later */
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  
+input.ng-untouched,
+select.ng-untouched,
+textarea.ng-untouched {
+    border-left: 1px solid #ccc !important;
+}
