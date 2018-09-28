@@ -42,30 +42,57 @@
     
     <!-- Show memo details with update functionality on click -->
     <div class="editMemo" *ngIf="memoEdit">
-        <div class="memocard-details" >
+        <div class="memocard-details" *ngIf="articleDetails?.id;" >
             <button class="closeDetails" (click)="closeDetails()"><i class="fas fa-times"></i></button>
-            <h4>Memo ID:</h4>
-            {{articleDetails?.id}}
-            <br><br>
-            <h4>Edit title:</h4>
-            <input *ngIf="articleDetails?.title" [(ngModel)]="articleDetails.title" placeholder="Enter title">
-            <br><br>
-            <h4>Edit subject:</h4>
-            <select *ngIf="articleDetails?.subject"  [(ngModel)]="articleDetails.subject" required [(ngModel)]="articleDetails.subject">
-                <option value="" disabled selected>Select a subject</option>
-                <option value="mysql">MySQL</option>
-                <option value="expressjs">ExpressJS</option>
-                <option value="angular">Angular</option>
-                <option value="nodejs">NodeJS</option>
-            </select>
-            <br><br>
-            <h4>Edit description:</h4>
-            <input *ngIf="articleDetails?.description" [(ngModel)]="articleDetails.description" placeholder="Enter description"/>
-            <br><br>
-            <h4>Edit text:</h4>
-            <textarea *ngIf="articleDetails?.text" [(ngModel)]="articleDetails.text" rows="7" placeholder="Enter text"></textarea>
-            <hr>
-            <div class="memoDetailsButtonsContainer">
+            <form #editArticleForm="ngForm">
+                <h4>Memo ID:</h4>
+                {{articleDetails?.id}}
+                <br><br>
+                <h4>Edit title:</h4>
+                <input 
+                    id="title" 
+                    name="title" 
+                    type="text"  
+                    [(ngModel)]="articleDetails.title"
+                    placeholder="Enter title"
+                    required
+                />
+
+                <br><br>
+                <h4>Edit subject:</h4>
+                <select 
+                    id="subject" 
+                    name="subject" 
+                    [(ngModel)]="articleDetails.subject"
+                    required
+                >
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="mysql">MySQL</option>
+                    <option value="expressjs">ExpressJS</option>
+                    <option value="angular">Angular</option>
+                    <option value="nodejs">NodeJS</option>
+                </select>
+                <br><br>
+                <h4>Edit description:</h4>
+                <input 
+                    id="description" 
+                    name="description" 
+                    [(ngModel)]="articleDetails.description" 
+                    placeholder="Enter description"
+                    required
+                />
+
+                <br><br>
+                <h4>Edit text:</h4>
+                <textarea 
+                    id="text" 
+                    name="text" 
+                    [(ngModel)]="articleDetails.text" 
+                    rows="7" 
+                    placeholder="Enter text"
+                    required
+                >
+                </textarea>
                 <div class="memoDetailButtons-left">
                     <!-- Back button -->
                     <button class="memoButton backMemo" (click)="details(articleDetails.id)">
@@ -79,14 +106,19 @@
                         <i class="far fa-trash-alt"></i> Delete
                     </button>
                     <!-- Update button -->
-                    <button class="memoButton updateMemo" (click)="updateMemo(articleDetails)">
+                    
+                    <button class="memoButton updateMemo" 
+                        (click)="updateMemo(articleDetails);"
+                        [disabled]="!editArticleForm.form.valid"
+                    >
                         <i class="far fa-edit"></i> Update
                     </button>
                 </div>
-            </div>
+            </form>
+
         </div>
     </div>
-  
+    
 
 </section>
 
