@@ -1,8 +1,7 @@
-
 /* Fixed sidebar with nagivation */
 
 .subject-sidebar{
-    background: #1C2237;
+    background: var(--subjectSidebar-bg-color);
     height: 100%;
     width: 200px;
 }
@@ -13,7 +12,7 @@
     color: #FFFFFF;
     width: 100%;
     height: auto;
-    background-color: #2e344c;
+    background-color: var(--logo-bg-color);
     margin-bottom: 50px;
     padding: 20px 0px 20px 40px;
 }
@@ -39,7 +38,7 @@ nav {
   }
 
   nav ul li a {
-    color: rgb(149, 153, 163);
+    color: var(--subjectLinks-color);
     padding: 16px 30px;
     display: block;
     text-decoration: none;
@@ -49,7 +48,7 @@ nav {
   }
 
   nav ul li a:hover{
-      color: #FFFFFF;
+    color: var(--subjectLinks-hover-color);
   }
 
     nav li a i{
@@ -63,7 +62,7 @@ nav {
 /* Active menu item */
 
 .active{
-    color: #FFFFFF!important;
+    color: var(--subjectLinks-active-color);
 }
 
 nav li a i{
@@ -76,31 +75,32 @@ nav li a i{
 
 /* Colors for subject icons */
 
+.green {
+    color: var(--subject-all-color);
+}
+
 .yellow {
-    color: #F7C62F;
+    color: var(--subject-mysql-color);
 }
 
 .orange {
-    color: #FA6B41;
+    color: var(--subject-expressjs-color);
 }
 
 .pink {
-    color: #FA3758;
+    color: var(--subject-angular-color);
 }
 
 .purple {
-    color: #535FFC;
+    color: var(--subject-nodejs-color);
 }
 
-.green {
-    color: #02e775;
-}
 
 
 /* Create memo button */
 
 .createButton {
-    background-color: #4c56af;
+    background-color: var(--createButton-bg-color);
     border: none;
     padding: 10px 30px;
     text-align: center;
@@ -116,7 +116,7 @@ nav li a i{
 }
 
 .createButton:hover{
-    background-color: #2d3899;
+    background-color: var(--createButton-hover-bg-color);
 }
 .createButton:active {
     box-shadow: 0 5px #666;

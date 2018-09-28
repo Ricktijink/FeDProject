@@ -15,30 +15,30 @@
 .card-header {
     border-bottom: none;
     display: flex;
-    color: #FFFFFF;
+    color: var(--card-header-color);
     padding: 20px 0px 0px 30px;
     border-radius: 0px;
 }
 
     .card-subtitle{
         font-size: 10px;
-        color: #a2acb5;
+        color: var(--card-subtitle-color);
         border-radius: 0px;
     }
 
 .card-body {
-    color: #bfbfbf;
+    color: var(--card-body-color);
     font-size: 14px;
     padding: 0px 0px 20px 30px;
     border-radius: 0px;
 }
 
 .card:nth-child(odd)>div {
-    background-color: #384263;
+    background-color: var(--card-odd-bg-color);
 }
 
 .card:nth-child(even)>div {
-    background-color: #2b3554;
+    background-color: var(--card-even-bg-color);
 }
 
 .card:hover {
@@ -76,7 +76,7 @@ p.card-text {
     height: 50%;
     font-size: 12px;
     position: absolute;
-    color: #FFFFFF;
+    color: var(--button-color);
     padding: 4px;
     left: -40px;
     border-radius: 0;
@@ -93,25 +93,25 @@ button:focus {
 /* Memocard List: Small delete button */
 
 .delete{
-    background-color: #fa3737;
+    background-color: var(--deleteButton-bg-color);
     display: none;
     top:0;
 }
 
 .delete:hover{
-    background-color: #ce2525;
+    background-color: var(--deleteButton-hover-bg-color);
 }
 
 /* Memocard List: Small revise button */
 
 .revise{
-    background-color: #4c56af;
+    background-color: var(--reviseButton-bg-color);
     display: none;
     top:50%;
 }
 
 .revise:hover{
-    background-color: #2d3899;
+    background-color: var(--reviseButton-hover-bg-color);
 }
 
 .card-title > i {
@@ -129,19 +129,19 @@ span {
 /* Subject colors */
 
 .mysql {
-    color:#e6ae00;
+    color: var(--subject-mysql-color);
 }
 
 .angular{
-    color:#FA3758;
+    color: var(--subject-angular-color);
 }
 
 .expressjs{
-    color: #FA6B41;
+    color: var(--subject-expressjs-color);
 }
 
 .nodejs{
-    color: #535FFC;
+    color: var(--subject-nodejs-color);
 }
 
 /* Memo Detail buttons */
@@ -156,7 +156,7 @@ span {
     cursor: pointer;
     transition: background-color 0.2s linear;
     text-decoration: none;
-    color: #FFFFFF;
+    color: var(--button-color);
     float: left;
     margin-bottom: 10px;
 }
@@ -183,50 +183,50 @@ span {
 /* Memo Details: Revise button */
 
 .reviseMemo{
-    background-color: #4c56af;
+    background-color: var(--reviseButton-bg-color);
     
 }
 
 .reviseMemo:hover{
-    background-color: #2d3899;
+    background-color: var(--reviseButton-hover-bg-color);
 }
 
 /* Memo Details: Back button */
 
 .backMemo{
-    background-color: #4c56af;
+    background-color: var(--backMemoButton-bg-color);
 }
 
 .backMemo:hover{
-    background-color: #2d3899;
+    background-color: var(--backMemoButton-hover-bg-color);
 }
 
 /* Memo Details: Delete button */
 
 .deleteMemo{
-    background-color: #fa3737;
+    background-color: var(--deleteButton-bg-color);
     margin-right: 10px;
 }
 
 .deleteMemo:hover{
-    background-color: #ce2525;
+    background-color: var(--deleteButton-hover-bg-color);
 }
 
 /* Memo Details: Update button */
 
 .updateMemo{
-    background-color: #ee7936;
+    background-color: var(--updateMemoButton-bg-color);
     margin-right: 10px;
 }
 
 .updateMemo:hover{
-    background-color: #c95c1d;
+    background-color: var(--updateMemoButton-hover-bg-color);
 }
 
 /* Memo Details: Close button */
 
 .closeDetails{
-    background-color: #fa3737;
+    background-color: var(--closeDetailsButton-bg-color);
     padding: 6px 8px 5px 8px;
     cursor: pointer;
     border: none;
@@ -239,11 +239,11 @@ span {
 }
 
 .closeDetails i{
-    color: #FFFFFF;
+    color: var(--fontAwesomeIcon-color);
 }
 
 .closeDetails:hover{
-    background-color: #ce2525;
+    background-color: var(--closeDetailsButton-hover-bg-color);
 }
 
 /* Input fields */
