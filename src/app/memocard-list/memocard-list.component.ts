@@ -37,7 +37,7 @@ export class MemocardListComponent implements OnInit {
   articleDetails: Articles
   showDetails = false;
   noMemos = false;
-  articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
+  articles: Articles = { id: 0, subject: '', title: '', description: '', published: '', text: ''}
 
 
   memoEdit = false;
