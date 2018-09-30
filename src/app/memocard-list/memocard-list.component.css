@@ -270,6 +270,7 @@ input, select, textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: var(--formInputs-bg-color);
 }
 
 button.memoButton.updateMemo:disabled {
