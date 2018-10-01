@@ -1,9 +1,7 @@
-<h4>
-  Step 1: Database Set up
-</h4>
-<br>
+
 <table>
     <tr>
+        <th>Id</th>
         <th>Subject</th>
         <th>Title</th>
         <th>Description</th>
@@ -11,6 +9,7 @@
         <th>Text</th>
     </tr>
     <tr *ngFor="let articles of articlesDT">
+        <td>{{articles.id}}</td>
         <td>{{articles.subject}}</td>
         <td>{{articles.title}}</td>
         <td>{{articles.description}}</td>
