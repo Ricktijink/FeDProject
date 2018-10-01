@@ -12,16 +12,16 @@ import { ArticlesService } from '../articles.service';
 })
 export class CreateMemoFormComponent implements OnInit {
 
-  articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date(), text: ''}
+  articles: Articles = { id: 0, subject: '', title: '', description: '', published: new Date().toISOString().split('T')[0], text: ''}
   
 
   submit() {
     // Console log test the input
-    console.log(" submit the following " + this.articles.title);
-
-    this.articlesService.sendArticles(this.articles).subscribe()
-    alert("Memo is created");
-    this.router.navigateByUrl('/all');
+    console.log("New Memo created: Name \'" + this.articles.title + "\' Subject \'" + this.articles.subject + "\'");
+    this.articlesService.sendArticles(this.articles).subscribe( () => 
+    window.location.href = '/all')
+    alert("New Memo is created");
+    // FIXME: this.router.navigateByUrl('/all'))
   }
 
   constructor(private router: Router, private articlesService: ArticlesService) { }

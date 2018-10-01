@@ -1,8 +1,7 @@
-
 /* Fixed sidebar with nagivation */
 
 .subject-sidebar{
-    background: #1C2237;
+    background: var(--subjectSidebar-bg-color);
     height: 100%;
     width: 200px;
 }
@@ -13,9 +12,33 @@
     color: #FFFFFF;
     width: 100%;
     height: auto;
-    background-color: #2e344c;
+    background-color: var(--logo-bg-color);
     margin-bottom: 50px;
-    padding: 20px 0px 20px 40px;
+    padding: 20px 0px 20px 20px;
+}
+
+.logo-img{
+    width: 28px;
+    height: 28px;
+    float: left;
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+.logo-img img{
+    width: 100%;
+    height: auto;
+}
+
+.logo-img span{
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.logo-text{
+    height: 30px;
+    float: left;
+    padding-top: 5px;
 }
 
 /* Footer menu in sidebar */
@@ -39,16 +62,17 @@ nav {
   }
 
   nav ul li a {
-    color: rgb(149, 153, 163);
+    color: var(--subjectLinks-color);
     padding: 16px 30px;
     display: block;
     text-decoration: none;
     font-weight: 200;
     line-height: 16px;
+    font-size: 14px;
   }
 
   nav ul li a:hover{
-      color: #FFFFFF;
+    color: var(--subjectLinks-hover-color);
   }
 
     nav li a i{
@@ -62,7 +86,7 @@ nav {
 /* Active menu item */
 
 .active{
-    color: #FFFFFF!important;
+    color: var(--subjectLinks-active-color);
 }
 
 nav li a i{
@@ -75,31 +99,32 @@ nav li a i{
 
 /* Colors for subject icons */
 
+.green {
+    color: var(--subject-all-color);
+}
+
 .yellow {
-    color: #F7C62F;
+    color: var(--subject-mysql-color);
 }
 
 .orange {
-    color: #FA6B41;
+    color: var(--subject-expressjs-color);
 }
 
 .pink {
-    color: #FA3758;
+    color: var(--subject-angular-color);
 }
 
 .purple {
-    color: #535FFC;
+    color: var(--subject-nodejs-color);
 }
 
-.green {
-    color: #02e775;
-}
 
 
 /* Create memo button */
 
 .createButton {
-    background-color: #4c56af;
+    background-color: var(--createButton-bg-color);
     border: none;
     padding: 10px 30px;
     text-align: center;
@@ -115,10 +140,9 @@ nav li a i{
 }
 
 .createButton:hover{
-    background-color: #6770c4;
+    background-color: var(--createButton-hover-bg-color);
 }
 .createButton:active {
-    background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }

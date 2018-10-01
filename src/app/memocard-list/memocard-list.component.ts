@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../articles.service';
 import { Articles } from '../articles';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-memocard-list',
@@ -15,7 +16,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
         query(
           ':enter',
           [
-            style({ opacity: 0, transform: 'translateX(-392px)' }),
+            style({ opacity: 0, transform: 'translateX(-32px)' }),
             stagger(
               '50ms',
               animate(
@@ -25,10 +26,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
             )
           ],
           { optional: true }
-        ),
-        query(':leave', animate('50ms', style({ opacity: 0 })), {
-          optional: true
-        })
+        )
       ])
     ])
   ]
@@ -38,37 +36,88 @@ export class MemocardListComponent implements OnInit {
   articlesDT
   articleDetails: Articles
   showDetails = false;
+  noMemos = false;
+  articles: Articles = { id: 0, subject: '', title: '', description: '', published: '', text: ''}
 
-  constructor(private articlesService: ArticlesService) { }
 
+  memoEdit = false;
+  constructor(private router: Router, private articlesService: ArticlesService) { }
+  
+  // Get all memo's
   getArticles() {
-    this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error))
-  }
-
-  getSubject(subject) {
-    console.log("Subject: " + subject)
-    this.articlesService.getSubject(subject).subscribe(
-      articles => this.articlesDT = articles, error => console.log(error)
+    this.articlesService.getArticles().subscribe(articles => this.articlesDT = articles, error => console.log(error),
+      () => {
+        if (this.articlesDT == 0) {
+          this.noMemos = true;
+        }
+      }
     );
   }
 
+  // Get subject
+  getSubject(subject) {
+    console.log("You have clicked the: \'" + subject + "\' subject")
+    
+    this.articlesService.getSubject(subject).subscribe(
+      articles => this.articlesDT = articles, error => console.log(error),
+      () => {
+        if (this.articlesDT == 0) {
+          this.noMemos = true;
+        }
+      }
+    );
+  }
+
+  // Delete memo
   delete(id) {
-    console.log("delete " + id)
+    console.log("Memo with id \'" + id + "\' is deleted")
     this.articlesService.deleteArticle(id)
     .subscribe(() => {
       this.ngOnInit() },
       error => console.log(error)
     );   
-    alert("Memo is deleted");
+    alert("Memo " + id + " is deleted");
+    // this.router.navigateByUrl('/all');
+    this.showDetails = false;
+    this.memoEdit = false;
   }
 
+  // Show details from memo
   details(id) {
-    console.log("details " + id)
+    console.log("Showing the details of Memo \'" + id + "\'")
+    this.memoEdit = false;
     this.showDetails= true
     this.articlesService.articleDetails(id)
     .subscribe(
       articlesData => this.articleDetails = articlesData[0]
     );
+  }
+
+  // close details memo
+  closeDetails() {
+    console.log("Memo details closed")
+    this.showDetails = false;
+    this.memoEdit = false;
+  }
+
+  // Update memo
+  updateMemo(articles: Articles) {
+    console.log("Memo has been updated!");
+    this.articlesService.updateMemoo(articles).subscribe( () => 
+    window.location.href = '/all')
+    alert("Memo has been updated (TS)" + articles.id);
+  }
+
+  // Edit memo
+  editMemo(id) {
+    console.log("Edit mode of the details of Memo \'" + id + "\'")
+    this.showDetails= false
+    this.memoEdit = true
+    this.articlesService.articleDetails(id)
+    .subscribe(
+      articlesData => this.articleDetails = articlesData[0]
+    );
+    // if (!ngModel) return; // do nothing if no ng-model
   }
 
 
@@ -84,5 +133,6 @@ export class MemocardListComponent implements OnInit {
     }
     
   }
+      
 
 }

@@ -1,5 +1,9 @@
 /* Memocard styling */
 
+.clearfix{
+    clear: both;
+}
+
 .card 
 {
     width: 100%;
@@ -11,30 +15,30 @@
 .card-header {
     border-bottom: none;
     display: flex;
-    color: #FFFFFF;
+    color: var(--card-header-color);
     padding: 20px 0px 0px 30px;
     border-radius: 0px;
 }
 
     .card-subtitle{
         font-size: 10px;
-        color: #a2acb5;
+        color: var(--card-subtitle-color);
         border-radius: 0px;
     }
 
 .card-body {
-    color: #bfbfbf;
+    color: var(--card-body-color);
     font-size: 14px;
     padding: 0px 0px 20px 30px;
     border-radius: 0px;
 }
 
 .card:nth-child(odd)>div {
-    background-color: #384263;
+    background-color: var(--card-odd-bg-color);
 }
 
 .card:nth-child(even)>div {
-    background-color: #2b3554;
+    background-color: var(--card-even-bg-color);
 }
 
 .card:hover {
@@ -54,9 +58,14 @@ p.card-text {
     max-width: 300px;
 }
 
+/* Memo */
+.memo {
+    height: 100vh;
+    overflow-y: scroll;
+}
 
 
-/* Memocard button styling */
+/* Memocard List: Small card buttons */
 
 .btn-link {
     margin-top: -30px;
@@ -67,7 +76,7 @@ p.card-text {
     height: 50%;
     font-size: 12px;
     position: absolute;
-    color: #FFFFFF;
+    color: var(--button-color);
     padding: 4px;
     left: -40px;
     border-radius: 0;
@@ -81,34 +90,28 @@ button:focus {
     outline:0;
 }
 
+/* Memocard List: Small delete button */
+
 .delete{
-    background-color: #fa3737;
+    background-color: var(--deleteButton-bg-color);
     display: none;
     top:0;
 }
 
 .delete:hover{
-    background-color: #ce2525;
+    background-color: var(--deleteButton-hover-bg-color);
 }
 
+/* Memocard List: Small revise button */
+
 .revise{
-    background-color: #4c56af;
+    background-color: var(--reviseButton-bg-color);
     display: none;
     top:50%;
 }
 
 .revise:hover{
-    background-color: #6770c4;
-}
-
-.details{
-    background-color: #ff7e33;
-    top: 50px;
-
-}
-
-.details:hover{
-    background-color: #eb691e;
+    background-color: var(--reviseButton-hover-bg-color);
 }
 
 .card-title > i {
@@ -119,41 +122,43 @@ span {
     text-transform: capitalize;
 }
 
-.mysql {
-    color:#e6ae00;
-}
-
-.angular{
-    color:#FA3758;
-}
-
-.expressjs{
-    color: #FA6B41;
-}
-
-.nodejs{
-    color: #535FFC;
-}
-
 .memocard-details p {
     line-height: 1.7;
 }
 
-/* Revise button */
+/* Subject colors */
+
+.mysql {
+    color: var(--subject-mysql-color);
+}
+
+.angular{
+    color: var(--subject-angular-color);
+}
+
+.expressjs{
+    color: var(--subject-expressjs-color);
+}
+
+.nodejs{
+    color: var(--subject-nodejs-color);
+}
+
+/* Memo Detail buttons */
 
 .memoButton {
     border: none;
-    padding: 10px 30px;
+    padding: 10px 20px;
     text-align: center;
     font-size: 14px;
     border-radius: 4px;
-    width: 130px;
     display: block;
     cursor: pointer;
     transition: background-color 0.2s linear;
     text-decoration: none;
-    color: #FFFFFF;
-    position: absolute;
+    color: var(--button-color);
+    float: left;
+    margin-bottom: 10px;
 }
 
 .memoButton i{
@@ -161,28 +166,130 @@ span {
 }
 
 .memoButton:active {
-    background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
-.reviseMemo{
-    right: 88px;
-    bottom: 60px;
-    background-color: #4c56af;
+/* MemoDetailButtons container */
 
+.memoDetailButtons-left{
+    float:left;
+}
+
+.memoDetailButtons-right{
+    float: right;
+}
+
+/* Memo Details: Revise button */
+
+.reviseMemo{
+    background-color: var(--reviseButton-bg-color);
+    
 }
 
 .reviseMemo:hover{
-    background-color: #6770c4;
+    background-color: var(--reviseButton-hover-bg-color);
 }
 
+/* Memo Details: Back button */
+
+.backMemo{
+    background-color: var(--backMemoButton-bg-color);
+}
+
+.backMemo:hover{
+    background-color: var(--backMemoButton-hover-bg-color);
+}
+
+/* Memo Details: Delete button */
+
 .deleteMemo{
-    right: 238px;
-    bottom: 60px;
-    background-color: #fa3737;
+    background-color: var(--deleteButton-bg-color);
+    margin-right: 10px;
 }
 
 .deleteMemo:hover{
-    background-color: #ce2525;
+    background-color: var(--deleteButton-hover-bg-color);
+}
+
+/* Memo Details: Update button */
+
+.updateMemo{
+    background-color: var(--updateMemoButton-bg-color);
+    margin-right: 10px;
+}
+
+.updateMemo:hover{
+    background-color: var(--updateMemoButton-hover-bg-color);
+}
+
+/* Memo Details: Close button */
+
+.closeDetails{
+    background-color: var(--closeDetailsButton-bg-color);
+    padding: 6px 8px 5px 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 31px;
+    transition: background-color 0.2s linear;
+    position: absolute;
+    right: 80px;
+}
+
+.closeDetails i{
+    color: var(--fontAwesomeIcon-color);
+}
+
+.closeDetails:hover{
+    background-color: var(--closeDetailsButton-hover-bg-color);
+}
+
+.noMemos {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 100%;
+}
+
+.noMemos p:first-of-type {
+    font-size: 23px;
+}
+
+.noMemos p:nth-of-type(2) {
+    margin: 0 40px;
+    color: var(--subjectLinks-color);
+}
+/* Input fields */
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--formInputs-bg-color);
+}
+
+button.memoButton.updateMemo:disabled {
+    background-color: #b4b4b4 ;
+    cursor: default ;
+}
+
+/* Checken of deze nog nodig zijn later */
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  
+input.ng-untouched,
+select.ng-untouched,
+textarea.ng-untouched {
+    border-left: 1px solid #ccc !important;
 }

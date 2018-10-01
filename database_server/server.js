@@ -25,7 +25,7 @@ function createMyConnection() {
 }
 
 // Get items from database
-app.get('/', (req, res) => {
+app.get('/memo', (req, res) => {
     var connection = createMyConnection();
     connection.connect()
 
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 })
 
 // Get items of a specified subject from database
-app.get('/:subject', (req, res) => {
+app.get('/memo/:subject', (req, res) => {
     var connection = createMyConnection();
     connection.connect()
 
@@ -70,7 +70,7 @@ app.post('/creatememo', (req, res) => {
 });
 
 // Delete items from database
-app.delete('/:id', (req, res) => {
+app.delete('/memo/:id', (req, res) => {
 
     var connection = createMyConnection();
 
@@ -95,10 +95,102 @@ app.get('/details/:id', (req, res) => {
     connection.query('select * from articles where id = ?', req.params.id , function (err, rows, fields) {
         if(err)
         console.log(err)
-        console.log("in get details " + rows)
         res.send(JSON.stringify(rows))
     })
     
+    connection.end()
+})
+
+// Update test
+app.post('/update', (req, res) => {
+
+    var articles1 = {id: req.body.id, subject: req.body.subject, title: req.body.title, description: req.body.description, text: req.body.text};
+    console.log("Update wordt aangeroepen yo" + req.body.id)
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query("UPDATE articles SET title= ?, subject= ?, description= ?, text= ? WHERE id = ?", [req.body.title, req.body.subject, req.body.description, req.body.text, req.body.id] , function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send(JSON.stringify(rows))
+        console.log("Update gedaan")
+    })
+    
+    connection.end()
+})
+
+// TEST count subject all
+
+app.get('/countSubjectAll', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT COUNT(*) FROM articles', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send({"countSubjectAll": Object.values(rows[0])[0]});
+    })
+    connection.end()
+})
+
+// TEST count subject mysql
+
+app.get('/countSubjectMysql', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT COUNT(*) FROM articles WHERE subject = \'mysql\'', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send({"countSubjectMysql": Object.values(rows[0])[0]});
+    })
+    connection.end()
+})
+
+// TEST count subject expressjs
+
+app.get('/countSubjectExpressjs', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT COUNT(*) FROM articles WHERE subject = \'expressjs\'', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send({"countSubjectExpressjs": Object.values(rows[0])[0]});
+    })
+    connection.end()
+})
+
+// TEST count subject expressjs
+
+app.get('/countSubjectAngular', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT COUNT(*) FROM articles WHERE subject = \'angular\'', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send({"countSubjectAngular": Object.values(rows[0])[0]});
+    })
+    connection.end()
+})
+
+// TEST count subject nodejs
+
+app.get('/countSubjectNodejs', (req, res) => {
+
+    var connection = createMyConnection();
+
+    connection.connect()
+    connection.query('SELECT COUNT(*) FROM articles WHERE subject = \'nodejs\'', function (err, rows, fields) {
+        if(err)
+        console.log(err)
+        res.send({"countSubjectNodejs": Object.values(rows[0])[0]});
+    })
     connection.end()
 })
 

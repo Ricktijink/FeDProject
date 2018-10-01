@@ -1,6 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
 
+
+/* Color variables */
+
+:root {
+    /* Background colors */
+    --body-bg-color: #F2F2F2;
+
+    --subjectSidebar-bg-color: #1C2237;
+    --memoCardList-bg-color: #212943;
+    --memocardDetails-bg-color: #FFFFFF;
+    --logo-bg-color: #2e344c;
+
+    --card-odd-bg-color: #384263;
+    --card-even-bg-color: #2b3554;
+
+    --form-bg-color: #FFFFFF;
+    --formInputs-bg-color: #f2f2f2;
+
+    --formValid-bg-color: #42A948;
+    --formInvalid-bg-color: #a94442;
+
+    --table-header-bg-color: #1C2237;
+    --table-rowEven-bg-color: #dbdbdb;
+
+    /* Text and link colors */
+    --subjectLinks-color: #9599a3;
+    --subjectLinks-hover-color: #FFFFFF;
+    --subjectLinks-active-color: #FFFFFF!important;
+
+    --subject-all-color: #02e775;
+    --subject-mysql-color: #F7C62F;
+    --subject-expressjs-color: #FA6B41;
+    --subject-angular-color: #FA3758;
+    --subject-nodejs-color: #535FFC;
+
+    --card-header-color: #FFFFFF;
+    --card-subtitle-color: #a2acb5;
+    --card-body-color: #bfbfbf;
+
+    --fontAwesomeIcon-color: #FFFFFF;
+
+    /* Button colors*/
+    --createButton-bg-color: #4c56af;
+    --createButton-hover-bg-color: #2d3899;
+    --button-color: #FFFFFF;
+    --button-disabled-bg-color: #b4b4b4;
+    --deleteButton-bg-color: #fa3737;
+    --deleteButton-hover-bg-color: #ce2525;
+    --reviseButton-bg-color: #4c56af;
+    --reviseButton-hover-bg-color: #2d3899;
+    --backMemoButton-bg-color: #4c56af;
+    --backMemoButton-hover-bg-color: #2d3899;
+    --updateMemoButton-bg-color: #ee7936;
+    --updateMemoButton-hover-bg-color: #c95c1d;
+    --closeDetailsButton-bg-color: #fa3737;
+    --closeDetailsButton-hover-bg-color: #ce2525;
+
+    /* TODO: Styles colors ook als variables */
+}
+
 /* Basic reset */
 
 * {
@@ -10,7 +70,7 @@
 }
 
 body {
-    background: #F2F2F2;
+    background: var(--body-bg-color);
     font-family: "Montserrat", sans-serif;
     height: 100vh;
   }
@@ -21,15 +81,13 @@ body {
     height: 100%;
 }
 
-.content {
-}
   /* Memocard List styling */
 
 .memocard-list{
     width: 400px;
     height: 100vh;
     overflow-y: scroll;
-    background-color: #212943;
+    background-color: var(--memoCardList-bg-color);
     float: left;
 }
 
@@ -41,7 +99,7 @@ body {
     padding: 50px 80px;
     width: auto;
     min-height: 900px;
-    background-color: #FFFFFF;
+    background-color: var(--memocardDetails-bg-color);
     height: 100vh;
     overflow-y: scroll;
 }
