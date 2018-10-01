@@ -18,9 +18,10 @@
 }
 
 .logo-img{
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
     float: left;
+    margin-top: 2px;
     margin-right: 10px;
 }
 
@@ -31,13 +32,13 @@
 
 .logo-img span{
     font-weight: 300;
+    font-size: 18px;
 }
 
 .logo-text{
     height: 30px;
-    font-size: 18px;
     float: left;
-    margin-top: 4px;
+    padding-top: 5px;
 }
 
 /* Footer menu in sidebar */
