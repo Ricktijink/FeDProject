@@ -8,7 +8,7 @@
         <div class="cardclick" (click)="details(articles.id)">
             <div class="card-header">
                 <div>
-                    <h5 class="card-title"><i class="far fa-sticky-note {{articles.subject}}"></i>{{articles.id}}. {{articles.title}}</h5>
+                    <h5 class="card-title"><i class="far fa-sticky-note {{articles.subject}}"></i>{{articles.title}}</h5>
                     <h6 class="card-subtitle mb-2">{{articles.published | date:'dd-MMM-yy (EEE)'}}</h6>
                 </div>
             </div>
@@ -49,10 +49,9 @@
     <div class="editMemo" *ngIf="memoEdit">
         <div class="memocard-details" *ngIf="articleDetails?.id;" >
             <button class="closeDetails" (click)="closeDetails()"><i class="fas fa-times"></i></button>
+            <br/>
+            <br/>
             <form #editArticleForm="ngForm">
-                <h4>Memo ID:</h4>
-                {{articleDetails?.id}}
-                <br><br>
                 <h4>Edit title:</h4>
                 <input 
                     id="title" 
