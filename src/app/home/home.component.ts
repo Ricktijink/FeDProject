@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   backgroundPosition: string = 'center center';
   backgroundRepeat: string = 'no-repeat';
   showDots: boolean = true;
-  dotColor: string = '#FFF';
+  dotColor: string = '#1C2237';
   showCaptions: boolean = true;
   captionColor: string = '#FFF';
   captionBackground: string = 'rgba(0, 0, 0, .35)';
