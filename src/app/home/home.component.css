@@ -1,5 +1,5 @@
 .content {
-    padding: 50px 80px;
+    padding: 40px 80px;
     text-align: center;
 }
 
@@ -14,7 +14,7 @@
 .period{
   font-size: 16px; 
   color: #666666; 
-  margin-bottom: 120px;
+  margin-bottom: 60px;
 }
 
 p {
@@ -64,3 +64,9 @@ p {
     float: left;
     padding-top: 5px;
 }
+
+/* Slider */
+/* i.arrow.next{ 
+    border-top: 2px solid #212529 !important;
+    border-left: 2px solid #212529 !important;
+} */

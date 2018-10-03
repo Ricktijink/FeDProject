@@ -12,7 +12,7 @@ import { CreateMemoFormComponent } from './create-memo-form/create-memo-form.com
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {SlideshowModule} from 'ng-simple-slideshow';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SlideshowModule
   ],
   providers: [],
   bootstrap: [AppComponent]
