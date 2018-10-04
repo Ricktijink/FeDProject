@@ -29,7 +29,7 @@ app.get('/memo', (req, res) => {
     var connection = createMyConnection();
     connection.connect()
 
-    connection.query('select * from articles', function (err, rows, fields) {
+    connection.query('select * from articles ORDER BY published DESC;', function (err, rows, fields) {
         if(err)
         console.log('Reload get ' + err)
 
@@ -45,7 +45,7 @@ app.get('/memo/:subject', (req, res) => {
 
     console.log("in get one " + req.params.subject)
 
-    connection.query(`select * from articles where subject = ?`, req.params.subject , function (err, rows, fields) {
+    connection.query(`select * from articles where subject = ? ORDER BY published DESC`, req.params.subject , function (err, rows, fields) {
         if(err)
         console.log('Reload get ' + err)
 
