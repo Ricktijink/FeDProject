@@ -20,7 +20,6 @@ export class CreateMemoFormComponent implements OnInit {
     console.log("New Memo created: Name \'" + this.articles.title + "\' Subject \'" + this.articles.subject + "\'");
     this.articlesService.sendArticles(this.articles).subscribe( () => 
     window.location.href = '/all')
-    alert("New Memo is created");
     // FIXME: this.router.navigateByUrl('/all'))
   }
 

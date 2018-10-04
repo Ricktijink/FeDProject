@@ -76,7 +76,6 @@ export class MemocardListComponent implements OnInit {
       this.ngOnInit() },
       error => console.log(error)
     );   
-    alert("Memo " + id + " is deleted");
     // this.router.navigateByUrl('/all');
     this.showDetails = false;
     this.memoEdit = false;
@@ -105,7 +104,6 @@ export class MemocardListComponent implements OnInit {
     console.log("Memo has been updated!");
     this.articlesService.updateMemoo(articles).subscribe( () => 
     window.location.href = '/all')
-    alert("Memo has been updated (TS)" + articles.id);
   }
 
   // Edit memo
